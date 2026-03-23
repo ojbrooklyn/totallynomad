@@ -9,9 +9,13 @@ import {
   DollarSign,
   TrendingDown,
   AlertCircle,
+  ExternalLink,
+  Plane,
+  Wifi,
 } from 'lucide-react'
 import PlusGate from '../components/PlusGate'
 import { countries } from '../lib/data/countries'
+import { partners } from '../lib/data/partners'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -1116,6 +1120,70 @@ function BudgetCalculator() {
               </p>
             </div>
           )}
+
+          {/* Flight savings tip */}
+          <div className="rounded-xl border border-sky-200 dark:border-sky-800/60 bg-sky-50/70 dark:bg-sky-900/20 p-4 flex items-start gap-3">
+            <Plane className="w-5 h-5 text-sky-600 dark:text-sky-400 shrink-0 mt-0.5" />
+            <div className="space-y-1">
+              <p className="text-sm font-semibold text-gray-900 dark:text-stone-100">
+                Want to save on flights?
+              </p>
+              <p className="text-xs text-gray-600 dark:text-stone-400 leading-relaxed">
+                <a
+                  href={partners.repriced.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-sky-700 dark:text-sky-300 hover:underline"
+                >
+                  Repriced
+                </a>{' '}
+                monitors your booking for price drops and automatically gets you cash back. Free to use — they only take a cut of the savings they find.
+              </p>
+              <div className="flex items-center gap-3 pt-0.5">
+                <a
+                  href={partners.repriced.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-700 dark:text-sky-300 hover:text-sky-800 dark:hover:text-sky-200 transition-colors"
+                >
+                  Save on your flight <ExternalLink className="w-3 h-3" />
+                </a>
+                <span className="text-xs text-gray-400 dark:text-slate-500 font-medium">Partner link</span>
+              </div>
+            </div>
+          </div>
+
+          {/* eSIM data tip */}
+          <div className="rounded-xl border border-emerald-200 dark:border-emerald-800/60 bg-emerald-50/70 dark:bg-emerald-900/20 p-4 flex items-start gap-3">
+            <Wifi className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+            <div className="space-y-1">
+              <p className="text-sm font-semibold text-gray-900 dark:text-stone-100">
+                Need data abroad?
+              </p>
+              <p className="text-xs text-gray-600 dark:text-stone-400 leading-relaxed">
+                <a
+                  href={partners.airalo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-emerald-700 dark:text-emerald-300 hover:underline"
+                >
+                  Airalo
+                </a>{' '}
+                eSIMs start at $5 — way cheaper than roaming. Buy before you fly and get instant data on arrival.
+              </p>
+              <div className="flex items-center gap-3 pt-0.5">
+                <a
+                  href={partners.airalo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 dark:hover:text-emerald-200 transition-colors"
+                >
+                  Get an eSIM <ExternalLink className="w-3 h-3" />
+                </a>
+                <span className="text-xs text-gray-400 dark:text-slate-500 font-medium">Partner link</span>
+              </div>
+            </div>
+          </div>
 
           {/* Detailed Breakdown — gated */}
           <PlusGate feature="Full budget breakdown" fallbackHeight="420px">

@@ -14,12 +14,15 @@ import {
   CheckCircle2,
   Zap,
   DollarSign,
+  ExternalLink,
+  Plane,
 } from 'lucide-react';
 import { platformStats } from '../lib/data/stats';
 import { exchangeRates } from '../lib/data/exchangeRates';
 import { newsItems } from '../lib/data/news';
 import { testimonials } from '../lib/data/testimonials';
 import { countries } from '../lib/data/countries';
+import { partners } from '../lib/data/partners';
 
 // ─── Category badge colours ───────────────────────────────────────────────────
 const categoryColours: Record<string, string> = {
@@ -319,6 +322,48 @@ export default function HomePage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────── */}
+      {/* 4b. PARTNER TOOLS TIP                                               */}
+      {/* ─────────────────────────────────────────────────────────────────── */}
+      <section className="bg-stone-50 dark:bg-slate-900 pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-sky-200 dark:border-sky-800/60 bg-sky-50/60 dark:bg-sky-900/20 p-6 md:p-8 flex flex-col md:flex-row items-start gap-5">
+            <div className="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center shrink-0">
+              <Plane className="w-6 h-6 text-sky-600 dark:text-sky-400" />
+            </div>
+            <div className="space-y-2 flex-1">
+              <div className="flex items-center gap-2">
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  Save on Flights Automatically
+                </h3>
+                <span className="text-xs text-gray-400 dark:text-slate-500 font-medium">Partner</span>
+              </div>
+              <p className="text-sm text-slate-600 dark:text-stone-400 leading-relaxed max-w-2xl">
+                Moving abroad? Book your flight, then let{' '}
+                <a
+                  href={partners.repriced.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-sky-700 dark:text-sky-300 hover:underline"
+                >
+                  Repriced
+                </a>{' '}
+                monitor the price. If it drops, they rebook automatically and you get cash back. Free to sign up — they only take 25% of the savings they find.
+              </p>
+              <a
+                href={partners.repriced.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-700 dark:text-sky-300 hover:text-sky-800 dark:hover:text-sky-200 transition-colors pt-1"
+              >
+                Try Repriced
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
         </div>
       </section>

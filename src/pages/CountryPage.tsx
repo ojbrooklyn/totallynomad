@@ -20,8 +20,11 @@ import {
   Stethoscope,
   TrendingDown,
   Zap,
+  ExternalLink,
+  Plane,
 } from 'lucide-react'
 import { countries } from '../lib/data/countries'
+import { partners } from '../lib/data/partners'
 import PlusGate from '../components/PlusGate'
 
 const COUNTRY_GRADIENTS: Record<string, string> = {
@@ -404,6 +407,78 @@ export default function CountryPage() {
             </div>
           </PlusGate>
         </section>
+
+        {/* ── Save on Flights Tip ────────────────────────────── */}
+        <div className="rounded-2xl border border-sky-200 dark:border-sky-800/60 bg-sky-50/70 dark:bg-sky-900/20 p-5 flex items-start gap-4">
+          <div className="w-9 h-9 rounded-lg bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center shrink-0">
+            <Plane className="w-5 h-5 text-sky-600 dark:text-sky-400" />
+          </div>
+          <div className="space-y-1.5">
+            <p className="text-sm font-semibold text-gray-900 dark:text-stone-100">
+              Save on Your Flight to {country.name}
+            </p>
+            <p className="text-sm text-gray-600 dark:text-stone-400 leading-relaxed">
+              Pro tip: Use{' '}
+              <a
+                href={partners.repriced.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-sky-700 dark:text-sky-300 hover:underline"
+              >
+                {partners.repriced.name}
+              </a>{' '}
+              to automatically track price drops on your flights and hotels. It monitors your booking and rebooks if the price drops — you get cash back with zero effort.
+            </p>
+            <div className="flex items-center gap-3 pt-1">
+              <a
+                href={partners.repriced.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-700 dark:text-sky-300 hover:text-sky-800 dark:hover:text-sky-200 transition-colors"
+              >
+                Try Repriced
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+              <span className="text-xs text-gray-400 dark:text-slate-500 font-medium">Partner link</span>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Stay Connected Tip ────────────────────────────── */}
+        <div className="rounded-2xl border border-emerald-200 dark:border-emerald-800/60 bg-emerald-50/70 dark:bg-emerald-900/20 p-5 flex items-start gap-4">
+          <div className="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center shrink-0">
+            <Wifi className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+          </div>
+          <div className="space-y-1.5">
+            <p className="text-sm font-semibold text-gray-900 dark:text-stone-100">
+              Stay Connected in {country.name}
+            </p>
+            <p className="text-sm text-gray-600 dark:text-stone-400 leading-relaxed">
+              Skip the airport SIM card hunt.{' '}
+              <a
+                href={partners.airalo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-emerald-700 dark:text-emerald-300 hover:underline"
+              >
+                {partners.airalo.name}
+              </a>{' '}
+              lets you buy an eSIM before you land — instant data the moment you arrive. Works in 200+ countries.
+            </p>
+            <div className="flex items-center gap-3 pt-1">
+              <a
+                href={partners.airalo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700 dark:text-emerald-300 hover:text-emerald-800 dark:hover:text-emerald-200 transition-colors"
+              >
+                Get an eSIM
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+              <span className="text-xs text-gray-400 dark:text-slate-500 font-medium">Partner link</span>
+            </div>
+          </div>
+        </div>
 
         {/* ── Section 4: Healthcare (GATED) ───────────────────── */}
         <section>
