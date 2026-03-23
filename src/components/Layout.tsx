@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import {
-  Globe,
   Sun,
   Moon,
   Menu,
@@ -10,6 +9,8 @@ import {
 } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 import { useAuth } from '../contexts/AuthContext'
+import logoDark from '../assets/logo-dark.svg'
+import logoLight from '../assets/logo-light.svg'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -66,19 +67,22 @@ export default function Layout() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-stone-50 dark:bg-slate-900 text-gray-900 dark:text-stone-200 transition-colors duration-200">
       {/* ── Navigation ── */}
-      <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60">
+      <header className="sticky top-0 z-50 w-full border-b border-stone-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
 
             {/* Left – Logo */}
             <Link
               to="/"
-              className="flex items-center gap-2 text-primary-600 font-bold text-xl shrink-0"
+              className="flex items-center shrink-0"
             >
-              <Globe className="w-6 h-6" aria-hidden="true" />
-              TotallyNomad
+              <img
+                src={isDark ? logoLight : logoDark}
+                alt="TotallyNomad"
+                className="h-8 w-auto"
+              />
             </Link>
 
             {/* Center – Desktop links */}
@@ -90,7 +94,7 @@ export default function Layout() {
                   className={`px-3 py-2 rounded-md text-sm transition-colors duration-150 ${
                     isActive(link.to)
                       ? 'text-primary-600 font-semibold'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
+                      : 'text-gray-600 dark:text-stone-300 hover:text-primary-600 dark:hover:text-primary-400'
                   }`}
                 >
                   {link.label}
@@ -104,7 +108,7 @@ export default function Layout() {
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle dark mode"
-                className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-150"
+                className="p-2 rounded-md text-gray-500 dark:text-stone-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-stone-100 dark:hover:bg-slate-800 transition-colors duration-150"
               >
                 {isDark ? (
                   <Sun className="w-5 h-5" aria-hidden="true" />
@@ -118,7 +122,7 @@ export default function Layout() {
                 <div className="relative">
                   <button
                     onClick={() => setUserMenuOpen((v) => !v)}
-                    className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-150"
+                    className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-slate-800 transition-colors duration-150"
                   >
                     <span className="w-7 h-7 rounded-full bg-primary-600 text-white flex items-center justify-center text-xs font-bold uppercase select-none">
                       {user.email?.[0] ?? 'U'}
@@ -127,19 +131,19 @@ export default function Layout() {
                   </button>
                   {userMenuOpen && (
                     <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-slate-800 ring-1 ring-black/5 dark:ring-white/10 py-1 z-50">
-                      <div className="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-slate-700 truncate">
+                      <div className="px-4 py-2 text-xs text-gray-500 dark:text-stone-400 border-b border-stone-100 dark:border-slate-700 truncate">
                         {user.email}
                       </div>
                       <Link
                         to="/account"
                         onClick={() => setUserMenuOpen(false)}
-                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-700"
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-slate-700"
                       >
                         Account
                       </Link>
                       <button
                         onClick={handleLogout}
-                        className="w-full text-left px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-slate-700"
+                        className="w-full text-left px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-stone-100 dark:hover:bg-slate-700"
                       >
                         Sign out
                       </button>
@@ -150,7 +154,7 @@ export default function Layout() {
                 <>
                   <Link
                     to="/login"
-                    className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-150"
+                    className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-slate-800 transition-colors duration-150"
                   >
                     Login
                   </Link>
@@ -169,7 +173,7 @@ export default function Layout() {
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle dark mode"
-                className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-150"
+                className="p-2 rounded-md text-gray-500 dark:text-stone-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-150"
               >
                 {isDark ? (
                   <Sun className="w-5 h-5" aria-hidden="true" />
@@ -180,7 +184,7 @@ export default function Layout() {
               <button
                 onClick={() => setMobileOpen((v) => !v)}
                 aria-label="Open menu"
-                className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-150"
+                className="p-2 rounded-md text-gray-500 dark:text-stone-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-150"
               >
                 {mobileOpen ? (
                   <X className="w-6 h-6" aria-hidden="true" />
@@ -199,7 +203,7 @@ export default function Layout() {
           }`}
         >
           <nav
-            className="border-t border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-4 flex flex-col gap-1"
+            className="border-t border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-4 flex flex-col gap-1"
             aria-label="Mobile navigation"
           >
             {navLinks.map((link) => (
@@ -210,29 +214,29 @@ export default function Layout() {
                 className={`px-3 py-2 rounded-md text-sm transition-colors duration-150 ${
                   isActive(link.to)
                     ? 'text-primary-600 font-semibold bg-primary-50 dark:bg-primary-900/20'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-slate-800'
+                    : 'text-gray-600 dark:text-stone-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-stone-100 dark:hover:bg-slate-800'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
 
-            <div className="border-t border-gray-100 dark:border-slate-700 mt-2 pt-3 flex flex-col gap-2">
+            <div className="border-t border-stone-100 dark:border-slate-700 mt-2 pt-3 flex flex-col gap-2">
               {user ? (
                 <>
-                  <span className="px-3 py-1 text-xs text-gray-500 dark:text-gray-400 truncate">
+                  <span className="px-3 py-1 text-xs text-gray-500 dark:text-stone-400 truncate">
                     {user.email}
                   </span>
                   <Link
                     to="/account"
                     onClick={() => setMobileOpen(false)}
-                    className="px-3 py-2 rounded-md text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800"
+                    className="px-3 py-2 rounded-md text-sm text-gray-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-slate-800"
                   >
                     Account
                   </Link>
                   <button
                     onClick={() => { handleLogout(); setMobileOpen(false) }}
-                    className="px-3 py-2 rounded-md text-sm text-left text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-slate-800"
+                    className="px-3 py-2 rounded-md text-sm text-left text-red-600 dark:text-red-400 hover:bg-stone-100 dark:hover:bg-slate-800"
                   >
                     Sign out
                   </button>
@@ -242,7 +246,7 @@ export default function Layout() {
                   <Link
                     to="/login"
                     onClick={() => setMobileOpen(false)}
-                    className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800"
+                    className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-slate-800"
                   >
                     Login
                   </Link>
@@ -266,7 +270,7 @@ export default function Layout() {
       </main>
 
       {/* ── Footer ── */}
-      <footer className="bg-gray-50 dark:bg-slate-950 border-t border-gray-200 dark:border-slate-800">
+      <footer className="bg-stone-100 dark:bg-slate-950 border-t border-stone-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Logo + columns */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
@@ -274,12 +278,15 @@ export default function Layout() {
             <div>
               <Link
                 to="/"
-                className="flex items-center gap-2 text-primary-600 font-bold text-lg"
+                className="flex items-center"
               >
-                <Globe className="w-5 h-5" aria-hidden="true" />
-                TotallyNomad
+                <img
+                  src={isDark ? logoLight : logoDark}
+                  alt="TotallyNomad"
+                  className="h-7 w-auto"
+                />
               </Link>
-              <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              <p className="mt-3 text-sm text-gray-500 dark:text-stone-400 leading-relaxed">
                 Tools and data for digital nomads, remote workers, and global travelers.
               </p>
             </div>
@@ -287,7 +294,7 @@ export default function Layout() {
             {/* Link columns */}
             {footerColumns.map((col) => (
               <div key={col.heading}>
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-stone-100 uppercase tracking-wider mb-4">
                   {col.heading}
                 </h3>
                 <ul className="space-y-2">
@@ -295,7 +302,7 @@ export default function Layout() {
                     <li key={link.to}>
                       <Link
                         to={link.to}
-                        className="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-150"
+                        className="text-sm text-gray-500 dark:text-stone-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-150"
                       >
                         {link.label}
                       </Link>
@@ -307,7 +314,7 @@ export default function Layout() {
           </div>
 
           {/* Bottom bar */}
-          <div className="border-t border-gray-200 dark:border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="border-t border-stone-200 dark:border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-gray-400 dark:text-gray-500">
               &copy; {new Date().getFullYear()} TotallyNomad. All rights reserved.
             </p>

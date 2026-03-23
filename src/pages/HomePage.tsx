@@ -114,7 +114,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-950 min-h-screen">
+    <div className="bg-stone-50 dark:bg-slate-950 min-h-screen">
 
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 1. HERO                                                             */}
@@ -133,22 +133,22 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-44">
           <div className="max-w-4xl">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-white/90 text-sm font-medium mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-white/90 text-sm font-medium mb-10">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               The Complete American Expat Platform
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
+            <h1 className="font-serif text-6xl md:text-8xl font-bold text-white leading-[1.05] tracking-tight mb-8">
               Stop Dreaming.{' '}
-              <span className="text-blue-200">Start Moving.</span>
+              <span className="text-blue-200 italic">Start Moving.</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl md:text-2xl text-blue-100 font-medium max-w-2xl mb-10 leading-relaxed">
+            <p className="text-xl md:text-2xl text-blue-100 font-medium max-w-2xl mb-12 leading-relaxed">
               The Complete Platform for Americans Moving Abroad — country guides,
               visa tools, budget calculators, and a community of 8,500+ expats.
             </p>
@@ -172,7 +172,7 @@ export default function HomePage() {
             </div>
 
             {/* Social proof */}
-            <div className="mt-12 flex items-center gap-3">
+            <div className="mt-14 flex items-center gap-3">
               <div className="flex -space-x-2">
                 {['MT', 'JW', 'RP', 'CM'].map((initials) => (
                   <div
@@ -194,16 +194,16 @@ export default function HomePage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 2. TRUST INDICATORS                                                 */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+      <section className="bg-white dark:bg-slate-900 border-b border-stone-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-slate-700">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 divide-y md:divide-y-0 md:divide-x divide-stone-200 dark:divide-slate-700">
             <div className="flex items-center justify-center gap-3 py-3 md:py-0">
               <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
                 <Globe className="w-5 h-5 text-blue-600 dark:text-blue-400" />
               </div>
               <div>
                 <p className="font-bold text-slate-900 dark:text-white">52 Country Guides</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Updated regularly by local experts</p>
+                <p className="text-sm text-slate-500 dark:text-stone-400">Updated regularly by local experts</p>
               </div>
             </div>
             <div className="flex items-center justify-center gap-3 py-3 md:py-0 md:pl-8">
@@ -212,7 +212,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="font-bold text-slate-900 dark:text-white">Real-Time Visa Updates</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Policy changes tracked as they happen</p>
+                <p className="text-sm text-slate-500 dark:text-stone-400">Policy changes tracked as they happen</p>
               </div>
             </div>
             <div className="flex items-center justify-center gap-3 py-3 md:py-0 md:pl-8">
@@ -221,7 +221,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="font-bold text-slate-900 dark:text-white">$0 to Start</p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Free tier gives you everything to begin</p>
+                <p className="text-sm text-slate-500 dark:text-stone-400">Free tier gives you everything to begin</p>
               </div>
             </div>
           </div>
@@ -231,26 +231,26 @@ export default function HomePage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 3. KEY METRICS DASHBOARD                                            */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-white dark:bg-slate-950">
+      <section className="py-20 md:py-28 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section heading */}
-          <div className="mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
+          <div className="mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
               Platform at a Glance
             </h2>
-            <p className="text-lg text-slate-500 dark:text-slate-400">
+            <p className="text-lg text-slate-500 dark:text-stone-400">
               Real data to power your move abroad
             </p>
           </div>
 
           {/* Stats grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {platformStats.map((stat, idx) => {
               const IconComponent = statIconComponents[idx % statIconComponents.length];
               return (
                 <div
                   key={stat.label}
-                  className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-md transition-all duration-200"
+                  className="bg-white dark:bg-slate-800/50 rounded-xl p-5 hover:shadow-md transition-all duration-200 shadow-sm"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center">
@@ -261,7 +261,7 @@ export default function HomePage() {
                   <p className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-1 leading-none">
                     {stat.value}
                   </p>
-                  <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <p className="text-sm font-semibold text-slate-700 dark:text-stone-300 mb-2">
                     {stat.label}
                   </p>
                   <p className="text-xs text-slate-500 dark:text-slate-500 leading-snug line-clamp-3">
@@ -281,24 +281,24 @@ export default function HomePage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 4. VALUE PROPOSITION                                                */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900">
+      <section className="py-20 md:py-28 bg-stone-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
               Everything You Need to Move Abroad
             </h2>
-            <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-500 dark:text-stone-400 max-w-2xl mx-auto">
               From first research to touching down in your new home — we cover every step of the journey.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={feature.title}
-                  className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-700 transition-all duration-200 group"
+                  className="bg-white dark:bg-slate-800/50 rounded-xl p-7 hover:shadow-lg transition-all duration-200 group shadow-sm"
                 >
                   <div className={`w-12 h-12 rounded-xl ${feature.iconBg} flex items-center justify-center mb-5 shadow-md`}>
                     <Icon className="w-6 h-6 text-white" />
@@ -306,7 +306,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                  <p className="text-sm text-slate-600 dark:text-stone-400 leading-relaxed mb-4">
                     {feature.description}
                   </p>
                   <Link
@@ -326,22 +326,22 @@ export default function HomePage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 5. EXCHANGE RATES + NEWS                                            */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-white dark:bg-slate-950">
+      <section className="py-20 md:py-28 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
             {/* ── Exchange Rates ── */}
-            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
-              <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
+            <div className="bg-white dark:bg-slate-800/50 rounded-xl overflow-hidden shadow-sm">
+              <div className="px-6 py-5 border-b border-stone-100 dark:border-slate-700 flex items-center justify-between">
                 <div>
-                  <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+                  <h2 className="font-serif text-xl font-bold text-slate-900 dark:text-white">
                     USD Exchange Rates
                   </h2>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  <p className="text-xs text-slate-500 dark:text-stone-400 mt-0.5">
                     Indicative mid-market rates · Updated daily
                   </p>
                 </div>
-                <span className="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-full">
+                <span className="text-xs font-medium bg-stone-100 dark:bg-slate-700 text-slate-600 dark:text-stone-300 px-2.5 py-1 rounded-full">
                   Example data
                 </span>
               </div>
@@ -349,26 +349,26 @@ export default function HomePage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-slate-50 dark:bg-slate-900/50">
-                      <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                    <tr className="bg-stone-50 dark:bg-slate-900/50">
+                      <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 dark:text-stone-400 uppercase tracking-wider">
                         Currency
                       </th>
-                      <th className="text-right px-4 py-3 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                      <th className="text-right px-4 py-3 text-xs font-semibold text-slate-500 dark:text-stone-400 uppercase tracking-wider">
                         Rate
                       </th>
-                      <th className="text-right px-6 py-3 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                      <th className="text-right px-6 py-3 text-xs font-semibold text-slate-500 dark:text-stone-400 uppercase tracking-wider">
                         24h
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
+                  <tbody className="divide-y divide-stone-100 dark:divide-slate-700">
                     {exchangeRates.map((rate) => {
                       const isPositive = rate.change24h > 0;
                       const isNeutral  = rate.change24h === 0;
                       return (
                         <tr
                           key={rate.code}
-                          className="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors"
+                          className="hover:bg-stone-50 dark:hover:bg-slate-700/30 transition-colors"
                         >
                           <td className="px-6 py-3.5">
                             <div className="flex items-center gap-3">
@@ -377,14 +377,14 @@ export default function HomePage() {
                                 <p className="font-semibold text-slate-900 dark:text-white">
                                   {rate.code}
                                 </p>
-                                <p className="text-xs text-slate-500 dark:text-slate-400">
+                                <p className="text-xs text-slate-500 dark:text-stone-400">
                                   {rate.currency}
                                 </p>
                               </div>
                             </div>
                           </td>
                           <td className="px-4 py-3.5 text-right">
-                            <span className="font-mono font-semibold text-slate-900 dark:text-slate-100">
+                            <span className="font-mono font-semibold text-slate-900 dark:text-stone-100">
                               {rate.rate.toLocaleString('en-US', {
                                 minimumFractionDigits: rate.rate < 10 ? 4 : 2,
                                 maximumFractionDigits: rate.rate < 10 ? 4 : 2,
@@ -395,7 +395,7 @@ export default function HomePage() {
                             <span
                               className={`inline-flex items-center gap-0.5 font-mono text-xs font-bold px-2 py-0.5 rounded-md ${
                                 isNeutral
-                                  ? 'text-slate-500 bg-slate-100 dark:bg-slate-700 dark:text-slate-400'
+                                  ? 'text-slate-500 bg-stone-100 dark:bg-slate-700 dark:text-stone-400'
                                   : isPositive
                                   ? 'text-red-600 bg-red-50 dark:bg-red-900/30 dark:text-red-400'
                                   : 'text-green-600 bg-green-50 dark:bg-green-900/30 dark:text-green-400'
@@ -412,7 +412,7 @@ export default function HomePage() {
                 </table>
               </div>
 
-              <div className="px-6 py-3 border-t border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/30">
+              <div className="px-6 py-3 border-t border-stone-100 dark:border-slate-700 bg-stone-50 dark:bg-slate-900/30">
                 <p className="text-xs text-slate-400 dark:text-slate-600">
                   1 USD = displayed amount · Green = USD stronger · Red = USD weaker
                 </p>
@@ -420,13 +420,13 @@ export default function HomePage() {
             </div>
 
             {/* ── Expat News ── */}
-            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
-              <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
+            <div className="bg-white dark:bg-slate-800/50 rounded-xl overflow-hidden shadow-sm">
+              <div className="px-6 py-5 border-b border-stone-100 dark:border-slate-700 flex items-center justify-between">
                 <div>
-                  <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+                  <h2 className="font-serif text-xl font-bold text-slate-900 dark:text-white">
                     Expat News
                   </h2>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  <p className="text-xs text-slate-500 dark:text-stone-400 mt-0.5">
                     Visa changes, tax updates & destination news
                   </p>
                 </div>
@@ -438,13 +438,13 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              <ul className="divide-y divide-slate-100 dark:divide-slate-700">
+              <ul className="divide-y divide-stone-100 dark:divide-slate-700">
                 {newsItems.slice(0, 5).map((item) => {
                   const badgeClass =
                     categoryColours[item.category] ??
-                    'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300';
+                    'bg-stone-100 text-slate-700 dark:bg-slate-700 dark:text-stone-300';
                   return (
-                    <li key={item.id} className="px-6 py-4 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+                    <li key={item.id} className="px-6 py-4 hover:bg-stone-50 dark:hover:bg-slate-700/30 transition-colors">
                       <div className="flex items-center gap-2 mb-1.5">
                         <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${badgeClass}`}>
                           {item.category}
@@ -461,7 +461,7 @@ export default function HomePage() {
                       <p className="text-sm font-semibold text-slate-900 dark:text-white leading-snug mb-1 line-clamp-2">
                         {item.title}
                       </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-slate-500 dark:text-stone-400 line-clamp-2 leading-relaxed">
                         {item.summary}
                       </p>
                     </li>
@@ -469,7 +469,7 @@ export default function HomePage() {
                 })}
               </ul>
 
-              <div className="px-6 py-4 border-t border-slate-100 dark:border-slate-700">
+              <div className="px-6 py-4 border-t border-stone-100 dark:border-slate-700">
                 <Link
                   to="/news"
                   className="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-semibold text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
@@ -487,23 +487,31 @@ export default function HomePage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 6. TESTIMONIALS                                                     */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900">
+      <section className="py-20 md:py-28 bg-stone-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <div className="text-center mb-14">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
               Stories from the Community
             </h2>
-            <p className="text-lg text-slate-500 dark:text-slate-400">
+            <p className="text-lg text-slate-500 dark:text-stone-400">
               Real members. Real moves. Real results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t) => (
               <div
                 key={t.id}
-                className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:shadow-md transition-shadow duration-200"
+                className="bg-white dark:bg-slate-800/50 rounded-xl p-8 hover:shadow-md transition-shadow duration-200 shadow-sm"
               >
+                {/* Quote mark */}
+                <div className="text-4xl font-serif text-blue-200 dark:text-blue-800 leading-none mb-4">"</div>
+
+                {/* Quote */}
+                <blockquote className="text-base text-slate-700 dark:text-stone-300 leading-relaxed mb-6">
+                  {t.quote}
+                </blockquote>
+
                 {/* Stars */}
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -512,16 +520,11 @@ export default function HomePage() {
                       className={`w-4 h-4 ${
                         i < t.rating
                           ? 'text-amber-400 fill-amber-400'
-                          : 'text-slate-200 dark:text-slate-700'
+                          : 'text-stone-200 dark:text-slate-700'
                       }`}
                     />
                   ))}
                 </div>
-
-                {/* Quote */}
-                <blockquote className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-5 italic">
-                  "{t.quote}"
-                </blockquote>
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
@@ -532,12 +535,12 @@ export default function HomePage() {
                     <p className="font-semibold text-slate-900 dark:text-white text-sm">
                       {t.name}
                     </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-slate-500 dark:text-stone-400">
                       {t.role}
                     </p>
                     <div className="flex items-center gap-1.5 mt-0.5">
                       <span className="text-xs text-slate-400 dark:text-slate-500">{t.from}</span>
-                      <span className="text-xs text-slate-300 dark:text-slate-600">→</span>
+                      <span className="text-xs text-stone-300 dark:text-slate-600">→</span>
                       <span className="text-xs font-medium text-blue-600 dark:text-blue-400">{t.to}</span>
                     </div>
                   </div>
@@ -555,30 +558,30 @@ export default function HomePage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 7. PRICING                                                          */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-white dark:bg-slate-950">
+      <section className="py-20 md:py-28 bg-white dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
               Simple, Honest Pricing
             </h2>
-            <p className="text-lg text-slate-500 dark:text-slate-400">
+            <p className="text-lg text-slate-500 dark:text-stone-400">
               Start free. Upgrade when you're ready to go deep.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
 
             {/* FREE */}
-            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-8 flex flex-col">
+            <div className="bg-white dark:bg-slate-800/50 rounded-xl p-8 flex flex-col shadow-sm">
               <div className="mb-6">
-                <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
+                <p className="text-sm font-semibold text-slate-500 dark:text-stone-400 uppercase tracking-wider mb-2">
                   Free
                 </p>
                 <div className="flex items-end gap-1 mb-1">
                   <span className="text-5xl font-black text-slate-900 dark:text-white">$0</span>
-                  <span className="text-slate-500 dark:text-slate-400 mb-2">/month</span>
+                  <span className="text-slate-500 dark:text-stone-400 mb-2">/month</span>
                 </div>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-stone-400">
                   Everything you need to start your research.
                 </p>
               </div>
@@ -591,7 +594,7 @@ export default function HomePage() {
                   'Community access',
                   'Email newsletter',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700 dark:text-stone-300">
                     <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                     {item}
                   </li>
@@ -600,14 +603,14 @@ export default function HomePage() {
 
               <Link
                 to="/signup"
-                className="block text-center font-bold py-3 px-6 border-2 border-slate-200 dark:border-slate-600 rounded-xl text-slate-800 dark:text-slate-200 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all"
+                className="block text-center font-bold py-3 px-6 border-2 border-stone-200 dark:border-slate-600 rounded-xl text-slate-800 dark:text-stone-200 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-stone-50 dark:hover:bg-slate-700 transition-all"
               >
                 Get Started Free
               </Link>
             </div>
 
             {/* PLUS */}
-            <div className="relative bg-white dark:bg-slate-800 border-2 border-blue-600 dark:border-blue-500 rounded-xl p-8 flex flex-col shadow-xl shadow-blue-100 dark:shadow-blue-900/20">
+            <div className="relative bg-white dark:bg-slate-800/50 border-2 border-blue-600 dark:border-blue-500 rounded-xl p-8 flex flex-col shadow-xl shadow-blue-100 dark:shadow-blue-900/20">
               {/* Badge */}
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <span className="bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
@@ -621,12 +624,12 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-end gap-1 mb-0.5">
                   <span className="text-5xl font-black text-slate-900 dark:text-white">$8</span>
-                  <span className="text-slate-500 dark:text-slate-400 mb-2">/month</span>
+                  <span className="text-slate-500 dark:text-stone-400 mb-2">/month</span>
                 </div>
                 <p className="text-xs font-medium text-green-600 dark:text-green-400 mb-1">
                   or $89/year — save 7%
                 </p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-stone-400">
                   Full platform access for serious movers.
                 </p>
               </div>
@@ -640,7 +643,7 @@ export default function HomePage() {
                   'Priority support',
                   'Agent matching & consultations',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700 dark:text-stone-300">
                     <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                     {item}
                   </li>
@@ -662,14 +665,14 @@ export default function HomePage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 8. FEATURED COUNTRIES                                               */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900">
+      <section className="py-20 md:py-28 bg-stone-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-10">
+          <div className="flex items-end justify-between mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
                 Popular Destinations
               </h2>
-              <p className="text-slate-500 dark:text-slate-400">
+              <p className="text-slate-500 dark:text-stone-400">
                 The most-searched countries by Americans planning a move abroad.
               </p>
             </div>
@@ -682,7 +685,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {featuredCountries.map((country) => {
               const gradient = countryGradients[country.slug] ?? 'from-slate-500 to-slate-700';
               const from = monthlyFrom[country.slug] ?? '$1,000';
@@ -690,17 +693,17 @@ export default function HomePage() {
               return (
                 <div
                   key={country.slug}
-                  className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 group"
+                  className="bg-white dark:bg-slate-800/50 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 group shadow-sm"
                 >
                   {/* Gradient header */}
-                  <div className={`bg-gradient-to-br ${gradient} p-5 flex items-center justify-between`}>
-                    <span className="text-4xl">{country.flag}</span>
+                  <div className={`bg-gradient-to-br ${gradient} p-6 flex items-center justify-between`}>
+                    <span className="text-5xl">{country.flag}</span>
                     <span className="text-xs font-bold text-white/90 bg-black/20 px-2.5 py-1 rounded-full">
                       from {from}/mo
                     </span>
                   </div>
 
-                  <div className="p-4">
+                  <div className="p-5">
                     <h3 className="font-bold text-slate-900 dark:text-white text-base mb-3">
                       {country.name}
                     </h3>
@@ -708,7 +711,7 @@ export default function HomePage() {
                     {/* Key stats */}
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-500 dark:text-slate-400">Safety</span>
+                        <span className="text-slate-500 dark:text-stone-400">Safety</span>
                         <div className="flex gap-0.5">
                           {Array.from({ length: 5 }).map((_, i) => (
                             <div
@@ -716,20 +719,20 @@ export default function HomePage() {
                               className={`w-2.5 h-2.5 rounded-sm ${
                                 i < country.safetyRating
                                   ? 'bg-green-500'
-                                  : 'bg-slate-200 dark:bg-slate-700'
+                                  : 'bg-stone-200 dark:bg-slate-700'
                               }`}
                             />
                           ))}
                         </div>
                       </div>
                       <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-500 dark:text-slate-400">Internet</span>
-                        <span className="font-semibold text-slate-700 dark:text-slate-300">
+                        <span className="text-slate-500 dark:text-stone-400">Internet</span>
+                        <span className="font-semibold text-slate-700 dark:text-stone-300">
                           {country.internetSpeed} Mbps
                         </span>
                       </div>
                       <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-500 dark:text-slate-400">Healthcare</span>
+                        <span className="text-slate-500 dark:text-stone-400">Healthcare</span>
                         <div className="flex gap-0.5">
                           {Array.from({ length: 5 }).map((_, i) => (
                             <div
@@ -737,7 +740,7 @@ export default function HomePage() {
                               className={`w-2.5 h-2.5 rounded-sm ${
                                 i < country.healthcareRating
                                   ? 'bg-blue-500'
-                                  : 'bg-slate-200 dark:bg-slate-700'
+                                  : 'bg-stone-200 dark:bg-slate-700'
                               }`}
                             />
                           ))}
@@ -747,7 +750,7 @@ export default function HomePage() {
 
                     <Link
                       to={`/countries/${country.slug}`}
-                      className="flex items-center justify-center gap-1.5 w-full py-2 text-xs font-bold text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group-hover:border-blue-400 dark:group-hover:border-blue-600"
+                      className="flex items-center justify-center gap-1.5 w-full py-2.5 text-xs font-bold text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group-hover:border-blue-400 dark:group-hover:border-blue-600"
                     >
                       Explore Guide
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -787,8 +790,8 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+          <h2 className="font-serif text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight italic">
             Ready to Start Your Journey?
           </h2>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed">

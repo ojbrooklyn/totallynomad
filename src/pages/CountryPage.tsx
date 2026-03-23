@@ -65,8 +65,8 @@ function CostBar({ label, value }: { label: string; value: string }) {
   return (
     <div className="space-y-1">
       <div className="flex items-center justify-between text-sm">
-        <span className="font-medium text-gray-700 dark:text-gray-300">{label}</span>
-        <span className="text-gray-500 dark:text-gray-400 text-xs">{value}</span>
+        <span className="font-medium text-gray-700 dark:text-stone-300">{label}</span>
+        <span className="text-gray-500 dark:text-stone-400 text-xs">{value}</span>
       </div>
       <div className="h-2 rounded-full bg-gray-100 dark:bg-slate-700 overflow-hidden">
         <div
@@ -84,10 +84,10 @@ export default function CountryPage() {
 
   if (!country) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-6 px-4 bg-white dark:bg-slate-950 text-center">
+      <div className="min-h-screen flex flex-col items-center justify-center gap-6 px-4 bg-stone-50 dark:bg-slate-950 text-center">
         <p className="text-7xl">🌍</p>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">Country not found</h1>
-        <p className="text-gray-500 dark:text-gray-400 max-w-md">
+        <h1 className="text-4xl font-bold font-serif text-gray-900 dark:text-stone-100">Country not found</h1>
+        <p className="text-gray-500 dark:text-stone-400 max-w-md">
           We couldn't find a country guide for <strong>"{slug}"</strong>. It may not be in our
           database yet.
         </p>
@@ -106,10 +106,10 @@ export default function CountryPage() {
   const [firstVisa, ...remainingVisas] = country.visaTypes
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-slate-950 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-stone-50 dark:bg-slate-950 text-gray-900 dark:text-stone-100">
       {/* ── Breadcrumb ───────────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-4 pt-5 pb-1">
-        <nav className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
+        <nav className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-stone-400">
           <Link to="/" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
             Home
           </Link>
@@ -198,7 +198,7 @@ export default function CountryPage() {
       </section>
 
       {/* ── Main content ─────────────────────────────────────────── */}
-      <div className="max-w-6xl mx-auto px-4 py-12 space-y-14">
+      <div className="max-w-6xl mx-auto px-4 py-16 space-y-16">
 
         {/* ── Section 2: Visa Options ──────────────────────────── */}
         <section>
@@ -206,14 +206,14 @@ export default function CountryPage() {
             <div className="w-9 h-9 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
               <Globe className="w-5 h-5 text-primary-600 dark:text-primary-400" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Visa Options</h2>
+            <h2 className="text-2xl font-bold font-serif text-gray-900 dark:text-stone-100">Visa Options</h2>
           </div>
 
           {/* First visa — always visible */}
-          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm p-6 mb-4">
+          <div className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6 mb-4">
             <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
               <div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-stone-100">
                   {firstVisa.name}
                 </h3>
                 <div className="flex flex-wrap gap-2 mt-2">
@@ -232,24 +232,24 @@ export default function CountryPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-              <div className="bg-gray-50 dark:bg-slate-800 rounded-lg px-4 py-3">
-                <p className="text-xs text-gray-500 dark:text-gray-400 uppercase font-medium tracking-wide mb-1">
+              <div className="bg-stone-50 dark:bg-slate-800 rounded-lg px-4 py-3">
+                <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium tracking-wide mb-1">
                   Duration
                 </p>
                 <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
                   {firstVisa.duration}
                 </p>
               </div>
-              <div className="bg-gray-50 dark:bg-slate-800 rounded-lg px-4 py-3">
-                <p className="text-xs text-gray-500 dark:text-gray-400 uppercase font-medium tracking-wide mb-1">
+              <div className="bg-stone-50 dark:bg-slate-800 rounded-lg px-4 py-3">
+                <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium tracking-wide mb-1">
                   Cost
                 </p>
                 <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
                   {firstVisa.cost}
                 </p>
               </div>
-              <div className="bg-gray-50 dark:bg-slate-800 rounded-lg px-4 py-3">
-                <p className="text-xs text-gray-500 dark:text-gray-400 uppercase font-medium tracking-wide mb-1">
+              <div className="bg-stone-50 dark:bg-slate-800 rounded-lg px-4 py-3">
+                <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium tracking-wide mb-1">
                   Processing Time
                 </p>
                 <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -258,7 +258,7 @@ export default function CountryPage() {
               </div>
             </div>
 
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-5">
+            <p className="text-sm text-gray-600 dark:text-stone-400 leading-relaxed mb-5">
               {firstVisa.description}
             </p>
 
@@ -268,7 +268,7 @@ export default function CountryPage() {
               </p>
               <ul className="space-y-2">
                 {firstVisa.requirements.map((req) => (
-                  <li key={req} className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
+                  <li key={req} className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-stone-300">
                     <Check className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
                     {req}
                   </li>
@@ -284,11 +284,11 @@ export default function CountryPage() {
                 {remainingVisas.map((visa) => (
                   <div
                     key={visa.name}
-                    className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm p-6"
+                    className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6"
                   >
                     <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                       <div>
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-stone-100">
                           {visa.name}
                         </h3>
                         <div className="flex flex-wrap gap-2 mt-2">
@@ -307,24 +307,24 @@ export default function CountryPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-                      <div className="bg-gray-50 dark:bg-slate-800 rounded-lg px-4 py-3">
-                        <p className="text-xs text-gray-500 dark:text-gray-400 uppercase font-medium tracking-wide mb-1">
+                      <div className="bg-stone-50 dark:bg-slate-800 rounded-lg px-4 py-3">
+                        <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium tracking-wide mb-1">
                           Duration
                         </p>
                         <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
                           {visa.duration}
                         </p>
                       </div>
-                      <div className="bg-gray-50 dark:bg-slate-800 rounded-lg px-4 py-3">
-                        <p className="text-xs text-gray-500 dark:text-gray-400 uppercase font-medium tracking-wide mb-1">
+                      <div className="bg-stone-50 dark:bg-slate-800 rounded-lg px-4 py-3">
+                        <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium tracking-wide mb-1">
                           Cost
                         </p>
                         <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
                           {visa.cost}
                         </p>
                       </div>
-                      <div className="bg-gray-50 dark:bg-slate-800 rounded-lg px-4 py-3">
-                        <p className="text-xs text-gray-500 dark:text-gray-400 uppercase font-medium tracking-wide mb-1">
+                      <div className="bg-stone-50 dark:bg-slate-800 rounded-lg px-4 py-3">
+                        <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium tracking-wide mb-1">
                           Processing Time
                         </p>
                         <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -333,7 +333,7 @@ export default function CountryPage() {
                       </div>
                     </div>
 
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-5">
+                    <p className="text-sm text-gray-600 dark:text-stone-400 leading-relaxed mb-5">
                       {visa.description}
                     </p>
 
@@ -345,7 +345,7 @@ export default function CountryPage() {
                         {visa.requirements.map((req) => (
                           <li
                             key={req}
-                            className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300"
+                            className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-stone-300"
                           >
                             <Check className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
                             {req}
@@ -366,12 +366,12 @@ export default function CountryPage() {
             <div className="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
               <TrendingDown className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Cost of Living</h2>
+            <h2 className="text-2xl font-bold font-serif text-gray-900 dark:text-stone-100">Cost of Living</h2>
           </div>
 
           <PlusGate feature={`Cost of living data for ${country.name}`}>
-            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm p-6">
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+            <div className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6">
+              <p className="text-sm text-gray-500 dark:text-stone-400 mb-6">
                 All figures are monthly estimates in USD. Ranges reflect budget vs. mid-range
                 lifestyle choices. Compared to the US average, {country.name} is generally{' '}
                 <strong className="text-emerald-600 dark:text-emerald-400">
@@ -411,20 +411,20 @@ export default function CountryPage() {
             <div className="w-9 h-9 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
               <Stethoscope className="w-5 h-5 text-red-600 dark:text-red-400" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Healthcare</h2>
+            <h2 className="text-2xl font-bold font-serif text-gray-900 dark:text-stone-100">Healthcare</h2>
           </div>
 
           <PlusGate feature={`Healthcare details for ${country.name}`}>
-            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm p-6">
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+            <div className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6">
+              <p className="text-sm text-gray-600 dark:text-stone-400 leading-relaxed mb-6">
                 {country.healthcare.system}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3 bg-gray-50 dark:bg-slate-800 rounded-xl p-4">
+                <div className="flex items-start gap-3 bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
                   <Shield className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
+                    <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide mb-1">
                       Quality Rating
                     </p>
                     <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -436,7 +436,7 @@ export default function CountryPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 bg-gray-50 dark:bg-slate-800 rounded-xl p-4">
+                <div className="flex items-start gap-3 bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
                   <CheckCircle2
                     className={`w-5 h-5 mt-0.5 shrink-0 ${
                       country.healthcare.publicAvailable
@@ -445,7 +445,7 @@ export default function CountryPage() {
                     }`}
                   />
                   <div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
+                    <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide mb-1">
                       Public System
                     </p>
                     <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -456,10 +456,10 @@ export default function CountryPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 bg-gray-50 dark:bg-slate-800 rounded-xl p-4">
+                <div className="flex items-start gap-3 bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
                   <DollarSign className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
+                    <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide mb-1">
                       Private Insurance Cost
                     </p>
                     <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -468,10 +468,10 @@ export default function CountryPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 bg-gray-50 dark:bg-slate-800 rounded-xl p-4">
+                <div className="flex items-start gap-3 bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
                   <Phone className="w-5 h-5 text-red-500 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
+                    <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide mb-1">
                       Emergency Number
                     </p>
                     <p className="text-xl font-bold text-red-600 dark:text-red-400">
@@ -490,20 +490,20 @@ export default function CountryPage() {
             <div className="w-9 h-9 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center">
               <Zap className="w-5 h-5 text-violet-600 dark:text-violet-400" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Pros & Cons</h2>
+            <h2 className="text-2xl font-bold font-serif text-gray-900 dark:text-stone-100">Pros & Cons</h2>
           </div>
 
           <PlusGate feature={`Pros & cons analysis for ${country.name}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Pros */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm p-6">
-                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+              <div className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6">
+                <h3 className="text-base font-bold text-gray-900 dark:text-stone-100 mb-4 flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-green-500" />
                   Pros
                 </h3>
                 <ul className="space-y-3">
                   {country.pros.map((pro) => (
-                    <li key={pro} className="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300">
+                    <li key={pro} className="flex items-start gap-3 text-sm text-gray-700 dark:text-stone-300">
                       <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
                       {pro}
                     </li>
@@ -512,14 +512,14 @@ export default function CountryPage() {
               </div>
 
               {/* Cons */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm p-6">
-                <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+              <div className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6">
+                <h3 className="text-base font-bold text-gray-900 dark:text-stone-100 mb-4 flex items-center gap-2">
                   <XCircle className="w-5 h-5 text-red-500" />
                   Cons
                 </h3>
                 <ul className="space-y-3">
                   {country.cons.map((con) => (
-                    <li key={con} className="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300">
+                    <li key={con} className="flex items-start gap-3 text-sm text-gray-700 dark:text-stone-300">
                       <XCircle className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
                       {con}
                     </li>
@@ -536,16 +536,16 @@ export default function CountryPage() {
             <div className="w-9 h-9 rounded-lg bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center">
               <Thermometer className="w-5 h-5 text-sky-600 dark:text-sky-400" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Climate</h2>
+            <h2 className="text-2xl font-bold font-serif text-gray-900 dark:text-stone-100">Climate</h2>
           </div>
 
           <PlusGate feature={`Climate information for ${country.name}`}>
-            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-sm p-6">
+            <div className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <div className="flex items-start gap-3 bg-sky-50 dark:bg-sky-900/20 rounded-xl p-4">
                   <Globe className="w-5 h-5 text-sky-500 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
+                    <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide mb-1">
                       Climate Type
                     </p>
                     <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -557,7 +557,7 @@ export default function CountryPage() {
                 <div className="flex items-start gap-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl p-4">
                   <Thermometer className="w-5 h-5 text-amber-500 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
+                    <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide mb-1">
                       Average Temperature
                     </p>
                     <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -569,7 +569,7 @@ export default function CountryPage() {
                 <div className="flex items-start gap-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl p-4">
                   <CalendarDays className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
+                    <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide mb-1">
                       Best Months to Visit / Move
                     </p>
                     <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -600,7 +600,7 @@ export default function CountryPage() {
           <p className="text-white/70 text-sm font-medium uppercase tracking-widest mb-3">
             Your move awaits
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold font-serif mb-4">
             Ready to Move to {country.name}?
           </h2>
           <p className="text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">

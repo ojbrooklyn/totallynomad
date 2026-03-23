@@ -106,19 +106,19 @@ export default function PricingPage() {
   const annualPrice = 89;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-200">
+    <div className="min-h-screen bg-stone-50 dark:bg-slate-950 transition-colors duration-200">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-green-600 to-emerald-600 py-16 px-4 text-center">
-        <h1 className="text-4xl font-bold text-white mb-3">Simple, Honest Pricing</h1>
-        <p className="text-green-100 text-lg max-w-xl mx-auto">
+      <div className="bg-white dark:bg-slate-950 py-20 md:py-24 px-4 text-center">
+        <h1 className="text-4xl font-bold font-serif text-slate-900 dark:text-white mb-3">Simple, Honest Pricing</h1>
+        <p className="text-slate-500 dark:text-stone-400 text-lg max-w-xl mx-auto">
           No fake urgency. No hidden fees. Just tools that work.
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 py-16 space-y-20">
+      <div className="max-w-5xl mx-auto px-4 py-20 space-y-24">
         {/* Billing Toggle */}
         <div className="flex items-center justify-center gap-4">
-          <span className={`text-sm font-medium ${!annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+          <span className={`text-sm font-medium ${!annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-stone-400'}`}>
             Monthly
           </span>
           <button
@@ -134,7 +134,7 @@ export default function PricingPage() {
               }`}
             />
           </button>
-          <span className={`text-sm font-medium ${annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+          <span className={`text-sm font-medium ${annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-stone-400'}`}>
             Annual
             <span className="ml-1.5 inline-block rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-0.5 text-xs font-semibold text-green-700 dark:text-green-400">
               Save $7/yr
@@ -143,31 +143,31 @@ export default function PricingPage() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           {/* Free Card */}
-          <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 shadow-sm transition-colors duration-200">
+          <div className="rounded-2xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-8 shadow-sm transition-colors duration-200">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-1">Free</h2>
             <div className="flex items-end gap-1 mb-1">
               <span className="text-5xl font-extrabold text-slate-900 dark:text-white">$0</span>
             </div>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Forever</p>
+            <p className="text-sm text-slate-500 dark:text-stone-400 mb-6">Forever</p>
 
             <ul className="space-y-3 mb-8">
               {FREE_FEATURES.map(f => (
-                <li key={f} className="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                <li key={f} className="flex items-center gap-3 text-sm text-slate-700 dark:text-stone-300">
                   <CheckIcon />
                   {f}
                 </li>
               ))}
             </ul>
 
-            <button className="w-full rounded-lg border-2 border-slate-300 dark:border-slate-600 py-3 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-150">
+            <button className="w-full rounded-lg border-2 border-slate-300 dark:border-slate-600 py-3 text-sm font-semibold text-slate-700 dark:text-stone-300 hover:border-slate-400 dark:hover:border-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-150">
               Get Started Free
             </button>
           </div>
 
           {/* Plus Card */}
-          <div className="rounded-2xl border-2 border-blue-500 bg-white dark:bg-slate-800 p-8 shadow-lg relative transition-colors duration-200">
+          <div className="rounded-2xl border-2 border-blue-500 bg-white dark:bg-slate-800/50 p-8 shadow-lg relative transition-colors duration-200">
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-bold text-white shadow">
               Most Popular
             </span>
@@ -177,15 +177,15 @@ export default function PricingPage() {
               <span className="text-5xl font-extrabold text-slate-900 dark:text-white">
                 ${annual ? Math.round(annualPrice / 12) : monthlyPrice}
               </span>
-              <span className="text-slate-500 dark:text-slate-400 mb-2">/mo</span>
+              <span className="text-slate-500 dark:text-stone-400 mb-2">/mo</span>
             </div>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+            <p className="text-sm text-slate-500 dark:text-stone-400 mb-6">
               {annual ? `$${annualPrice} billed annually` : 'Billed monthly'}
             </p>
 
             <ul className="space-y-3 mb-8">
               {PLUS_FEATURES.map(f => (
-                <li key={f} className="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                <li key={f} className="flex items-center gap-3 text-sm text-slate-700 dark:text-stone-300">
                   <CheckIcon />
                   {f}
                 </li>
@@ -200,17 +200,17 @@ export default function PricingPage() {
 
         {/* Feature Comparison Table */}
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-8">
+          <h2 className="text-2xl font-bold font-serif text-slate-900 dark:text-white text-center mb-8">
             Full Feature Comparison
           </h2>
-          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-stone-200 dark:border-slate-700 shadow-sm">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-slate-50 dark:bg-slate-800/80">
-                  <th className="text-left py-4 px-6 font-semibold text-slate-600 dark:text-slate-300 w-1/2">
+                  <th className="text-left py-4 px-6 font-semibold text-slate-600 dark:text-stone-300 w-1/2">
                     Feature
                   </th>
-                  <th className="text-center py-4 px-6 font-semibold text-slate-600 dark:text-slate-300">
+                  <th className="text-center py-4 px-6 font-semibold text-slate-600 dark:text-stone-300">
                     Free
                   </th>
                   <th className="text-center py-4 px-6 font-semibold text-blue-600 dark:text-blue-400">
@@ -226,7 +226,7 @@ export default function PricingPage() {
                       i % 2 === 1 ? 'bg-slate-50/50 dark:bg-slate-800/60' : ''
                     }`}
                   >
-                    <td className="py-3.5 px-6 text-slate-700 dark:text-slate-300 font-medium">
+                    <td className="py-3.5 px-6 text-slate-700 dark:text-stone-300 font-medium">
                       {row.feature}
                     </td>
                     <td className="py-3.5 px-6 text-center">
@@ -244,7 +244,7 @@ export default function PricingPage() {
 
         {/* FAQ Section */}
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-8">
+          <h2 className="text-2xl font-bold font-serif text-slate-900 dark:text-white text-center mb-8">
             Frequently Asked Questions
           </h2>
           <div className="max-w-2xl mx-auto space-y-2">
@@ -253,7 +253,7 @@ export default function PricingPage() {
               return (
                 <div
                   key={i}
-                  className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 overflow-hidden transition-colors duration-200"
+                  className="rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 overflow-hidden transition-colors duration-200"
                 >
                   <button
                     onClick={() => toggleFaq(i)}
@@ -270,7 +270,7 @@ export default function PricingPage() {
                     )}
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-3">
+                    <div className="px-6 pb-5 text-sm text-slate-600 dark:text-stone-400 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-3">
                       {faq.answer}
                     </div>
                   )}

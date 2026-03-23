@@ -558,10 +558,10 @@ function ScoreBar({ score }: { score: number }) {
     score >= 80 ? 'bg-green-500' : score >= 60 ? 'bg-yellow-500' : 'bg-orange-500'
   return (
     <div className="flex items-center gap-2 mt-1">
-      <div className="flex-1 h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+      <div className="flex-1 h-1.5 bg-stone-200 dark:bg-gray-700 rounded-full overflow-hidden">
         <div className={`h-full ${color} rounded-full transition-all duration-500`} style={{ width: `${score}%` }} />
       </div>
-      <span className="text-xs text-gray-500 dark:text-gray-400 w-8 text-right">{score}%</span>
+      <span className="text-xs text-gray-500 dark:text-stone-400 w-8 text-right">{score}%</span>
     </div>
   )
 }
@@ -625,10 +625,10 @@ function VisaQuiz() {
           <ClipboardList className="w-8 h-8 text-purple-600 dark:text-purple-400" />
         </div>
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Visa Eligibility Quiz</h2>
-        <p className="text-gray-500 dark:text-gray-400 max-w-md leading-relaxed">
+        <p className="text-gray-500 dark:text-stone-400 max-w-md leading-relaxed">
           Answer 8 quick questions and we'll match you with the best visa options across Portugal, Mexico, Spain, Thailand, and Costa Rica.
         </p>
-        <ul className="text-sm text-gray-500 dark:text-gray-400 space-y-1 text-left">
+        <ul className="text-sm text-gray-500 dark:text-stone-400 space-y-1 text-left">
           <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 shrink-0" /> Takes about 2 minutes</li>
           <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 shrink-0" /> No account required</li>
           <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 shrink-0" /> Personalized visa matches</li>
@@ -659,14 +659,14 @@ function VisaQuiz() {
             <RotateCcw className="w-4 h-4" /> Start Over
           </button>
         </div>
-        <p className="text-gray-500 dark:text-gray-400 text-sm">
+        <p className="text-gray-500 dark:text-stone-400 text-sm">
           Based on your answers, here are your top visa options ranked by relevance.
         </p>
 
         {results.length === 0 && (
           <div className="flex flex-col items-center py-12 gap-4 text-center">
             <AlertCircle className="w-10 h-10 text-orange-400" />
-            <p className="text-gray-600 dark:text-gray-400 max-w-sm">
+            <p className="text-gray-600 dark:text-stone-400 max-w-sm">
               No strong visa matches found based on your profile. Consider adjusting your income or employment status, or consult an immigration attorney.
             </p>
           </div>
@@ -696,11 +696,11 @@ function VisaQuiz() {
     <div className="py-6 px-4 space-y-6">
       {/* Progress bar */}
       <div className="space-y-2">
-        <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
+        <div className="flex justify-between text-xs text-gray-500 dark:text-stone-400">
           <span>Question {step} of 8</span>
           <span>{Math.round(progress)}% complete</span>
         </div>
-        <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-stone-200 dark:bg-gray-700 rounded-full overflow-hidden">
           <div
             className="h-full bg-purple-500 rounded-full transition-all duration-300"
             style={{ width: `${progress}%` }}
@@ -722,7 +722,7 @@ function VisaQuiz() {
               className={`text-left px-4 py-3 rounded-xl border-2 text-sm font-medium transition-all duration-150 ${
                 isSelected
                   ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/30 dark:border-blue-400 text-blue-700 dark:text-blue-300'
-                  : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-750'
+                  : 'border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-700 dark:text-stone-300 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-stone-50 dark:hover:bg-gray-750'
               }`}
             >
               {option}
@@ -735,7 +735,7 @@ function VisaQuiz() {
       <div className="flex items-center justify-between pt-2">
         <button
           onClick={handleBack}
-          className="inline-flex items-center gap-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm text-gray-600 dark:text-stone-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium transition-colors"
         >
           <ChevronLeft className="w-4 h-4" /> Back
         </button>
@@ -753,26 +753,26 @@ function VisaQuiz() {
 
 function CountryResultCard({ country }: { country: CountryResult }) {
   return (
-    <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 space-y-4 shadow-sm">
+    <div className="rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-5 space-y-4 shadow-sm">
       <div className="flex items-center gap-3">
         <span className="text-3xl leading-none">{country.flag}</span>
         <div>
           <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">{country.name}</h3>
-          <p className="text-xs text-gray-500 dark:text-gray-400">{country.visaMatches.length} visa option{country.visaMatches.length !== 1 ? 's' : ''} matched</p>
+          <p className="text-xs text-gray-500 dark:text-stone-400">{country.visaMatches.length} visa option{country.visaMatches.length !== 1 ? 's' : ''} matched</p>
         </div>
       </div>
       <div className="space-y-3">
         {country.visaMatches.map((visa) => (
-          <div key={visa.visaName} className="rounded-lg bg-gray-50 dark:bg-gray-750 dark:bg-gray-900/40 p-4 space-y-2 border border-gray-100 dark:border-gray-700/50">
+          <div key={visa.visaName} className="rounded-lg bg-stone-50 dark:bg-gray-750 dark:bg-gray-900/40 p-4 space-y-2 border border-gray-100 dark:border-slate-700/50">
             <div className="flex items-start justify-between gap-2 flex-wrap">
               <span className="font-semibold text-sm text-gray-900 dark:text-gray-100">{visa.visaName}</span>
               <DifficultyBadge level={visa.difficulty} />
             </div>
             <ScoreBar score={visa.score} />
-            <p className="text-xs text-gray-600 dark:text-gray-400">{visa.matchReason}</p>
+            <p className="text-xs text-gray-600 dark:text-stone-400">{visa.matchReason}</p>
             <div className="flex items-start gap-1.5">
               <CheckCircle className="w-3.5 h-3.5 text-blue-500 shrink-0 mt-0.5" />
-              <p className="text-xs text-gray-500 dark:text-gray-400">{visa.keyRequirement}</p>
+              <p className="text-xs text-gray-500 dark:text-stone-400">{visa.keyRequirement}</p>
             </div>
           </div>
         ))}
@@ -919,11 +919,11 @@ function MiniBar({ label, value, max }: { label: string; value: number; max: num
   const pct = max > 0 ? Math.min(100, (value / max) * 100) : 0
   return (
     <div className="flex items-center gap-3">
-      <span className="text-xs text-gray-500 dark:text-gray-400 w-28 shrink-0 truncate">{label}</span>
-      <div className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+      <span className="text-xs text-gray-500 dark:text-stone-400 w-28 shrink-0 truncate">{label}</span>
+      <div className="flex-1 h-2 bg-stone-200 dark:bg-gray-700 rounded-full overflow-hidden">
         <div className="h-full bg-purple-500 rounded-full" style={{ width: `${pct}%` }} />
       </div>
-      <span className="text-xs font-medium text-gray-700 dark:text-gray-300 w-16 text-right shrink-0">{fmt(value)}</span>
+      <span className="text-xs font-medium text-gray-700 dark:text-stone-300 w-16 text-right shrink-0">{fmt(value)}</span>
     </div>
   )
 }
@@ -970,11 +970,11 @@ function BudgetCalculator() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Monthly Salary */}
             <div className="space-y-1.5">
-              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-stone-300">
                 Monthly Salary (USD)
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-slate-500">
                   <DollarSign className="w-4 h-4" />
                 </span>
                 <input
@@ -983,20 +983,20 @@ function BudgetCalculator() {
                   value={salary}
                   onChange={(e) => setSalary(e.target.value)}
                   placeholder="e.g. 5000"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent placeholder:text-gray-400 dark:placeholder:text-gray-500"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent placeholder:text-gray-400 dark:placeholder:text-gray-500"
                 />
               </div>
             </div>
 
             {/* Target Country */}
             <div className="space-y-1.5">
-              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-stone-300">
                 Target Country
               </label>
               <select
                 value={country}
                 onChange={(e) => setCountry(e.target.value as CountrySlug)}
-                className="w-full px-3 py-2.5 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-3 py-2.5 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               >
                 {(Object.keys(countryLabels) as CountrySlug[]).map((slug) => (
                   <option key={slug} value={slug}>
@@ -1008,7 +1008,7 @@ function BudgetCalculator() {
 
             {/* Family Size */}
             <div className="space-y-1.5">
-              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-stone-300">
                 Family Size
               </label>
               <div className="grid grid-cols-4 gap-2">
@@ -1019,7 +1019,7 @@ function BudgetCalculator() {
                     className={`py-2.5 rounded-xl border-2 text-sm font-medium transition-all duration-150 ${
                       familySize === size
                         ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/30 dark:border-purple-400 text-purple-700 dark:text-purple-300'
-                        : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-gray-300'
+                        : 'border-stone-200 dark:border-slate-700 text-gray-700 dark:text-stone-300 hover:border-gray-300'
                     }`}
                   >
                     {size}
@@ -1030,7 +1030,7 @@ function BudgetCalculator() {
 
             {/* Moving Preference */}
             <div className="space-y-1.5">
-              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-stone-300">
                 Lifestyle Preference
               </label>
               <div className="grid grid-cols-3 gap-2">
@@ -1041,7 +1041,7 @@ function BudgetCalculator() {
                     className={`py-2.5 rounded-xl border-2 text-xs font-medium transition-all duration-150 ${
                       preference === pref
                         ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/30 dark:border-purple-400 text-purple-700 dark:text-purple-300'
-                        : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-gray-300'
+                        : 'border-stone-200 dark:border-slate-700 text-gray-700 dark:text-stone-300 hover:border-gray-300'
                     }`}
                   >
                     {pref}
@@ -1070,7 +1070,7 @@ function BudgetCalculator() {
               <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
                 {countryFlags[country]} {countryLabels[country]} Budget Estimate
               </h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+              <p className="text-xs text-gray-500 dark:text-stone-400 mt-0.5">
                 Family of {familySize} · {preference} lifestyle
               </p>
             </div>
@@ -1084,16 +1084,16 @@ function BudgetCalculator() {
 
           {/* Free Summary Section */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 space-y-1 shadow-sm">
-              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Monthly Cost</p>
+            <div className="rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 space-y-1 shadow-sm">
+              <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide">Monthly Cost</p>
               <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{fmt(result.monthly.total)}</p>
             </div>
-            <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 space-y-1 shadow-sm">
-              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">One-Time Costs</p>
+            <div className="rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 space-y-1 shadow-sm">
+              <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide">One-Time Costs</p>
               <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{fmt(result.oneTime.total)}</p>
             </div>
-            <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 space-y-1 shadow-sm">
-              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">6-Month Budget</p>
+            <div className="rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 space-y-1 shadow-sm">
+              <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide">6-Month Budget</p>
               <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">{fmt(result.sixMonthTotal)}</p>
             </div>
           </div>
@@ -1121,7 +1121,7 @@ function BudgetCalculator() {
           <PlusGate feature="Full budget breakdown" fallbackHeight="420px">
             <div className="space-y-6">
               {/* Monthly Chart */}
-              <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm space-y-4">
+              <div className="rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm space-y-4">
                 <h4 className="font-bold text-gray-900 dark:text-gray-100 text-sm">Monthly Costs Breakdown</h4>
                 <div className="space-y-2.5">
                   <MiniBar label="Rent" value={result.monthly.rent} max={maxMonthlyItem} />
@@ -1133,14 +1133,14 @@ function BudgetCalculator() {
                   <MiniBar label="Health Insurance" value={result.monthly.healthInsurance} max={maxMonthlyItem} />
                   <MiniBar label="Entertainment" value={result.monthly.entertainment} max={maxMonthlyItem} />
                 </div>
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-3 flex justify-between">
+                <div className="border-t border-stone-200 dark:border-slate-700 pt-3 flex justify-between">
                   <span className="text-sm font-bold text-gray-900 dark:text-gray-100">Monthly Total</span>
                   <span className="text-sm font-bold text-purple-600 dark:text-purple-400">{fmt(result.monthly.total)}</span>
                 </div>
               </div>
 
               {/* One-Time Costs */}
-              <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm space-y-3">
+              <div className="rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-sm space-y-3">
                 <h4 className="font-bold text-gray-900 dark:text-gray-100 text-sm">One-Time Moving Costs</h4>
                 <div className="space-y-2">
                   {[
@@ -1151,19 +1151,19 @@ function BudgetCalculator() {
                     ['Emergency Fund', result.oneTime.emergencyFund],
                   ].map(([label, value]) => (
                     <div key={label as string} className="flex justify-between text-sm">
-                      <span className="text-gray-600 dark:text-gray-400">{label as string}</span>
+                      <span className="text-gray-600 dark:text-stone-400">{label as string}</span>
                       <span className="font-medium text-gray-900 dark:text-gray-100">{fmt(value as number)}</span>
                     </div>
                   ))}
                 </div>
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-3 flex justify-between">
+                <div className="border-t border-stone-200 dark:border-slate-700 pt-3 flex justify-between">
                   <span className="text-sm font-bold text-gray-900 dark:text-gray-100">One-Time Total</span>
                   <span className="text-sm font-bold text-purple-600 dark:text-purple-400">{fmt(result.oneTime.total)}</span>
                 </div>
               </div>
 
               {/* 6-Month Summary */}
-              <div className="rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 p-5 text-white space-y-3 shadow-md">
+              <div className="rounded-xl bg-blue-600 p-5 text-white space-y-3 shadow-md">
                 <h4 className="font-bold text-sm opacity-90">Total 6-Month Budget</h4>
                 <p className="text-4xl font-extrabold">{fmt(result.sixMonthTotal)}</p>
                 <p className="text-sm opacity-80">
@@ -1184,25 +1184,25 @@ export default function ToolsPage() {
   const [activeTab, setActiveTab] = useState<Tab>('quiz')
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+    <div className="min-h-screen bg-stone-50 dark:bg-slate-950">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-purple-600 to-pink-600 py-16 px-4">
+      <div className="bg-white dark:bg-slate-950 py-20 md:py-24 px-4">
         <div className="max-w-4xl mx-auto text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold font-serif text-slate-900 dark:text-white tracking-tight">
             Relocation Tools
           </h1>
-          <p className="text-purple-100 text-lg md:text-xl max-w-xl mx-auto">
+          <p className="text-slate-500 dark:text-stone-400 text-lg md:text-xl max-w-xl mx-auto">
             Free tools to help plan your move abroad
           </p>
 
           {/* Tab Switcher */}
-          <div className="mt-8 inline-flex bg-white/20 backdrop-blur-sm rounded-xl p-1 gap-1">
+          <div className="mt-8 inline-flex bg-stone-100 dark:bg-slate-800 rounded-xl p-1 gap-1">
             <button
               onClick={() => setActiveTab('quiz')}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
                 activeTab === 'quiz'
-                  ? 'bg-white text-purple-700 shadow-sm'
-                  : 'text-white/90 hover:text-white hover:bg-white/10'
+                  ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-white shadow-sm'
+                  : 'text-slate-600 dark:text-stone-400 hover:text-slate-900 dark:hover:text-white hover:bg-stone-50 dark:hover:bg-slate-700/50'
               }`}
             >
               <ClipboardList className="w-4 h-4" />
@@ -1212,8 +1212,8 @@ export default function ToolsPage() {
               onClick={() => setActiveTab('calculator')}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
                 activeTab === 'calculator'
-                  ? 'bg-white text-purple-700 shadow-sm'
-                  : 'text-white/90 hover:text-white hover:bg-white/10'
+                  ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-white shadow-sm'
+                  : 'text-slate-600 dark:text-stone-400 hover:text-slate-900 dark:hover:text-white hover:bg-stone-50 dark:hover:bg-slate-700/50'
               }`}
             >
               <Calculator className="w-4 h-4" />
@@ -1225,12 +1225,12 @@ export default function ToolsPage() {
 
       {/* Tool Panel */}
       <div className="max-w-3xl mx-auto px-4 py-10">
-        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm overflow-hidden min-h-[400px]">
+        <div className="rounded-2xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 shadow-sm overflow-hidden min-h-[400px]">
           {activeTab === 'quiz' ? <VisaQuiz /> : <BudgetCalculator />}
         </div>
 
         {/* Disclaimer */}
-        <p className="mt-6 text-center text-xs text-gray-400 dark:text-gray-500 leading-relaxed max-w-xl mx-auto">
+        <p className="mt-6 text-center text-xs text-gray-400 dark:text-slate-500 leading-relaxed max-w-xl mx-auto">
           These tools provide general estimates for planning purposes only. Immigration rules and cost of living change frequently. Always consult an immigration attorney and verify current requirements before making decisions.
         </p>
       </div>
