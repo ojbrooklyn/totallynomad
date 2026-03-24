@@ -17,10 +17,15 @@ import logoLight from '../assets/logo-light.svg'
 
 const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Tools', to: '/tools' },
   { label: 'Countries', to: '/countries' },
+  { label: 'Cities', to: '/cities' },
+]
+
+const resourcesDropdown = [
+  { label: 'Tools', to: '/tools' },
+  { label: 'Country Comparison', to: '/tools/compare' },
+  { label: 'Services', to: '/services' },
   { label: 'Blog', to: '/blog' },
-  { label: 'Pricing', to: '/pricing' },
 ]
 
 const footerColumns = [
@@ -28,9 +33,9 @@ const footerColumns = [
     heading: 'Platform',
     links: [
       { label: 'Home', to: '/' },
-      { label: 'Tools', to: '/tools' },
       { label: 'Countries', to: '/countries' },
-      { label: 'Blog', to: '/blog' },
+      { label: 'Cities', to: '/cities' },
+      { label: 'Services', to: '/services' },
       { label: 'Pricing', to: '/pricing' },
     ],
   },
@@ -39,7 +44,9 @@ const footerColumns = [
     links: [
       { label: 'Visa Quiz', to: '/tools' },
       { label: 'Budget Calculator', to: '/tools' },
-      { label: 'Country Comparison', to: '/countries' },
+      { label: 'Country Comparison', to: '/tools/compare' },
+      { label: 'Blog', to: '/blog' },
+      { label: 'Community', to: 'https://discord.gg/totallynomad' },
     ],
   },
   {
@@ -60,6 +67,7 @@ export default function Layout() {
   const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [userMenuOpen, setUserMenuOpen] = useState(false)
+  const [resourcesOpen, setResourcesOpen] = useState(false)
 
   const isActive = (to: string) =>
     to === '/' ? location.pathname === '/' : location.pathname.startsWith(to)
@@ -104,6 +112,47 @@ export default function Layout() {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Resources dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setResourcesOpen((v) => !v)}
+                  onBlur={() => setTimeout(() => setResourcesOpen(false), 150)}
+                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm transition-colors duration-150 ${
+                    ['/tools', '/services', '/blog'].some((p) => location.pathname.startsWith(p))
+                      ? 'text-primary-600 font-semibold'
+                      : 'text-gray-600 dark:text-stone-300 hover:text-primary-600 dark:hover:text-primary-400'
+                  }`}
+                >
+                  Resources
+                  <ChevronDown className="w-3.5 h-3.5" />
+                </button>
+                {resourcesOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-48 rounded-md shadow-lg bg-white dark:bg-[#1A2332] ring-1 ring-black/5 dark:ring-white/10 py-1 z-50">
+                    {resourcesDropdown.map((link) => (
+                      <Link
+                        key={link.to}
+                        to={link.to}
+                        onClick={() => setResourcesOpen(false)}
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-[#2A3444]"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link
+                to="/pricing"
+                className={`px-3 py-2 rounded-md text-sm transition-colors duration-150 ${
+                  isActive('/pricing')
+                    ? 'text-primary-600 font-semibold'
+                    : 'text-gray-600 dark:text-stone-300 hover:text-primary-600 dark:hover:text-primary-400'
+                }`}
+              >
+                Pricing
+              </Link>
             </nav>
 
             {/* Right – Theme toggle + Auth */}
@@ -210,7 +259,7 @@ export default function Layout() {
             className="border-t border-stone-200 dark:border-[#2A3444] bg-white dark:bg-[#0C1222] px-4 py-4 flex flex-col gap-1"
             aria-label="Mobile navigation"
           >
-            {navLinks.map((link) => (
+            {[...navLinks, ...resourcesDropdown, { label: 'Pricing', to: '/pricing' }].map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
@@ -329,12 +378,23 @@ export default function Layout() {
                 <ul className="space-y-2">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <Link
-                        to={link.to}
-                        className="text-sm text-teal-200 hover:text-white transition-colors duration-150"
-                      >
-                        {link.label}
-                      </Link>
+                      {link.to.startsWith('http') ? (
+                        <a
+                          href={link.to}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-teal-200 hover:text-white transition-colors duration-150"
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          to={link.to}
+                          className="text-sm text-teal-200 hover:text-white transition-colors duration-150"
+                        >
+                          {link.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -348,7 +408,7 @@ export default function Layout() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="inline-flex items-center gap-2 text-sm text-teal-200 hover:text-white transition-colors">
+                  <a href="https://discord.gg/totallynomad" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-teal-200 hover:text-white transition-colors">
                     <MessageCircle className="w-4 h-4" /> Discord
                   </a>
                 </li>
@@ -384,7 +444,7 @@ export default function Layout() {
               <a href="#" aria-label="Instagram" className="text-teal-300 hover:text-white transition-colors duration-150">
                 <Camera className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="Discord" className="text-teal-300 hover:text-white transition-colors duration-150">
+              <a href="https://discord.gg/totallynomad" target="_blank" rel="noopener noreferrer" aria-label="Discord" className="text-teal-300 hover:text-white transition-colors duration-150">
                 <MessageCircle className="w-4 h-4" />
               </a>
             </div>

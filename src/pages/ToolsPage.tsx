@@ -1313,6 +1313,25 @@ export default function ToolsPage() {
             </Link>
           </div>
 
+          {/* Free Tool Card — Country Comparison */}
+          <div className="mt-6 max-w-2xl mx-auto text-left">
+            <Link
+              to="/tools/compare"
+              className="group rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-5 shadow-sm hover:shadow-md hover:border-primary-400 dark:hover:border-primary-500 transition-all duration-200 flex items-start gap-3"
+            >
+              <div className="mt-0.5 w-10 h-10 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-900 dark:text-white text-sm">Country Comparison Tool</h3>
+                <p className="text-xs text-slate-500 dark:text-stone-400 mt-1">Compare 2-3 countries side-by-side on costs, visas, safety, internet, healthcare, flights, and more.</p>
+                <span className="inline-flex items-center gap-1 text-xs text-primary-600 dark:text-primary-400 font-semibold mt-2 group-hover:gap-2 transition-all">
+                  Compare Now <ArrowRight className="w-3 h-3" />
+                </span>
+              </div>
+            </Link>
+          </div>
+
           <div className="mt-8 text-center">
             <p className="text-xs text-slate-400 dark:text-slate-500 mb-4 uppercase tracking-wider font-medium">Free Tools</p>
           </div>

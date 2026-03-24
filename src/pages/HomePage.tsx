@@ -680,6 +680,35 @@ export default function HomePage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────── */}
+      {/* 6b. JOIN OUR COMMUNITY                                              */}
+      {/* ─────────────────────────────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white dark:bg-[#0C1222]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-8 md:p-12 text-white text-center shadow-lg">
+            <MessageCircle className="w-12 h-12 mx-auto mb-4 text-white/80" />
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-3">
+              Join Our Community
+            </h2>
+            <p className="text-lg text-white/80 max-w-lg mx-auto mb-2">
+              Growing community of expats helping each other navigate life abroad.
+            </p>
+            <p className="text-sm text-white/60 mb-8">
+              Ask questions, share tips, and connect with Americans who've already made the move.
+            </p>
+            <a
+              href="https://discord.gg/totallynomad"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Join the Discord
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 7. PRICING                                                          */}
       {/* ─────────────────────────────────────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-white dark:bg-[#0C1222]">

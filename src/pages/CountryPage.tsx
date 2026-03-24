@@ -22,9 +22,14 @@ import {
   Zap,
   ExternalLink,
   Plane,
+  ClipboardCheck,
+  Home,
+  FileText,
+  MessageCircle,
 } from 'lucide-react'
 import { countries } from '../lib/data/countries'
 import { partners } from '../lib/data/partners'
+import { postArrivalGuides } from '../lib/data/postArrival'
 import PlusGate from '../components/PlusGate'
 
 const COUNTRY_GRADIENTS: Record<string, string> = {
@@ -667,6 +672,141 @@ export default function CountryPage() {
             </div>
           </PlusGate>
         </section>
+      </div>
+
+      {/* ── Section 7: After You Arrive ──────────────────────────── */}
+      {(() => {
+        const guide = postArrivalGuides.find((g) => g.countrySlug === country.slug)
+        if (!guide) return null
+        return (
+          <div className="max-w-6xl mx-auto px-4 pb-16 space-y-16">
+            <section>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                  <ClipboardCheck className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                </div>
+                <h2 className="text-2xl font-bold font-serif text-gray-900 dark:text-stone-100">After You Arrive</h2>
+              </div>
+
+              <PlusGate feature={`Post-arrival guide for ${country.name}`}>
+                <div className="space-y-8">
+                  {/* First Week Checklist */}
+                  <div className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-stone-100 mb-4 flex items-center gap-2">
+                      <ClipboardCheck className="w-5 h-5 text-amber-500" />
+                      First Week Checklist
+                    </h3>
+                    <div className="space-y-4">
+                      {guide.firstWeekChecklist.map((item) => (
+                        <div key={item.task} className="bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
+                          <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-1">{item.task}</p>
+                          <p className="text-sm text-gray-600 dark:text-stone-400">{item.details}</p>
+                          {item.officeName && (
+                            <p className="text-xs text-primary-600 dark:text-primary-400 mt-1 font-medium">Office: {item.officeName}</p>
+                          )}
+                          {item.tip && (
+                            <p className="text-xs text-amber-600 dark:text-amber-400 mt-1">Tip: {item.tip}</p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Finding Housing */}
+                  <div className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-stone-100 mb-4 flex items-center gap-2">
+                      <Home className="w-5 h-5 text-violet-500" />
+                      Finding Permanent Housing
+                    </h3>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                      <div className="bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
+                        <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium mb-2">Best Websites/Apps</p>
+                        <ul className="space-y-1.5">
+                          {guide.housing.websites.map((site) => (
+                            <li key={site.name} className="text-sm">
+                              <a href={site.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary-600 dark:text-primary-400 hover:underline">
+                                {site.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
+                        <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium mb-2">Typical Terms</p>
+                        <p className="text-sm text-gray-700 dark:text-stone-300 mb-1"><span className="font-medium">Lease:</span> {guide.housing.typicalLeaseTerms}</p>
+                        <p className="text-sm text-gray-700 dark:text-stone-300 mb-1"><span className="font-medium">Deposit:</span> {guide.housing.depositRequirements}</p>
+                        <p className="text-sm text-gray-700 dark:text-stone-300"><span className="font-medium">Avg time to find:</span> {guide.housing.avgTimeToFind}</p>
+                      </div>
+                    </div>
+
+                    {guide.housing.scamWarnings.length > 0 && (
+                      <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4">
+                        <p className="text-xs font-semibold text-red-800 dark:text-red-300 uppercase mb-2">Scam Warnings</p>
+                        <ul className="space-y-1.5">
+                          {guide.housing.scamWarnings.map((warning) => (
+                            <li key={warning} className="flex items-start gap-2 text-sm text-red-700 dark:text-red-300">
+                              <XCircle className="w-4 h-4 mt-0.5 shrink-0" />
+                              {warning}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Local Registration */}
+                  <div className="bg-white dark:bg-slate-900/80 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm p-6">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-stone-100 mb-4 flex items-center gap-2">
+                      <FileText className="w-5 h-5 text-sky-500" />
+                      Local Registration
+                    </h3>
+
+                    <p className="text-sm text-gray-600 dark:text-stone-400 leading-relaxed mb-4">{guide.localRegistration.process}</p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
+                        <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium mb-2">Documents Needed</p>
+                        <ul className="space-y-1.5">
+                          {guide.localRegistration.documentsNeeded.map((doc) => (
+                            <li key={doc} className="flex items-start gap-2 text-sm text-gray-700 dark:text-stone-300">
+                              <Check className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                              {doc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
+                        <p className="text-xs text-gray-500 dark:text-stone-400 uppercase font-medium mb-2">Estimated Time</p>
+                        <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{guide.localRegistration.estimatedTime}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </PlusGate>
+            </section>
+          </div>
+        )
+      })()}
+
+      {/* ── Ask the Community CTA ──────────────────────────────────── */}
+      <div className="max-w-6xl mx-auto px-4 pb-10">
+        <div className="bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-8 text-white text-center">
+          <MessageCircle className="w-10 h-10 mx-auto mb-4 text-white/80" />
+          <h2 className="text-2xl font-bold font-serif mb-2">Ask the Community</h2>
+          <p className="text-white/80 max-w-md mx-auto mb-6">
+            Have questions about moving to {country.name}? Connect with expats who've already made the move.
+          </p>
+          <a
+            href="https://discord.gg/totallynomad"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-gray-100 transition-colors shadow-lg"
+          >
+            <MessageCircle className="w-4 h-4" />
+            Join Our Discord
+          </a>
+        </div>
       </div>
 
       {/* ── Bottom CTA ───────────────────────────────────────────── */}

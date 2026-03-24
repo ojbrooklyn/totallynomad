@@ -16,6 +16,10 @@ const BlogPage = React.lazy(() => import('./pages/BlogPage'))
 const BlogPostPage = React.lazy(() => import('./pages/BlogPostPage'))
 const RelocationPlanPage = React.lazy(() => import('./pages/RelocationPlanPage'))
 const ChecklistPage = React.lazy(() => import('./pages/ChecklistPage'))
+const ComparePage = React.lazy(() => import('./pages/ComparePage'))
+const CitiesPage = React.lazy(() => import('./pages/CitiesPage'))
+const CityPage = React.lazy(() => import('./pages/CityPage'))
+const ServicesPage = React.lazy(() => import('./pages/ServicesPage'))
 
 function PageSpinner() {
   return (
@@ -44,6 +48,10 @@ export default function App() {
                 <Route path="blog/:slug" element={<BlogPostPage />} />
                 <Route path="tools/relocation-plan" element={<RelocationPlanPage />} />
                 <Route path="tools/checklist" element={<ChecklistPage />} />
+                <Route path="tools/compare" element={<ComparePage />} />
+                <Route path="cities" element={<CitiesPage />} />
+                <Route path="cities/:slug" element={<CityPage />} />
+                <Route path="services" element={<ServicesPage />} />
               </Route>
             </Routes>
           </Suspense>
