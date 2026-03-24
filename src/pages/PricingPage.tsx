@@ -2,36 +2,39 @@ import { useState } from 'react';
 import { Check, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 const FREE_FEATURES = [
-  'Basic country guides (preview)',
   'Visa quiz (basic results)',
   'Budget calculator (summary)',
+  'Basic country guides (preview)',
+  'Blog access',
   'Community access',
   'Email newsletter',
 ];
 
 const PLUS_FEATURES = [
   'Everything in Free',
+  'Personalized Relocation Plan Generator',
+  'Interactive Document Checklist',
   'Full country guides',
   'Detailed visa analysis',
   'Complete budget breakdowns',
-  'Downloadable checklists',
   'Priority email support',
   'Agent matching',
   'Early access to new tools',
 ];
 
 const COMPARISON_ROWS: { feature: string; free: boolean; plus: boolean }[] = [
-  { feature: 'Country guides', free: false, plus: true },
-  { feature: 'Visa quiz results', free: false, plus: true },
-  { feature: 'Budget calculator', free: true, plus: true },
+  { feature: 'Visa quiz (basic)', free: true, plus: true },
+  { feature: 'Budget calculator (summary)', free: true, plus: true },
+  { feature: 'Relocation Plan Generator', free: false, plus: true },
+  { feature: 'Interactive Document Checklist', free: false, plus: true },
+  { feature: 'Full country guides', free: false, plus: true },
+  { feature: 'Detailed visa analysis', free: false, plus: true },
   { feature: 'Cost of living data', free: false, plus: true },
   { feature: 'Healthcare info', free: false, plus: true },
-  { feature: 'Downloadable checklists', free: false, plus: true },
+  { feature: 'Blog access', free: true, plus: true },
   { feature: 'Community access', free: true, plus: true },
-  { feature: 'Email support', free: true, plus: true },
   { feature: 'Priority support', free: false, plus: true },
   { feature: 'Agent matching', free: false, plus: true },
-  { feature: 'API access', free: false, plus: false },
   { feature: 'Early access', free: false, plus: true },
 ];
 

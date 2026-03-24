@@ -14,6 +14,8 @@ const LoginPage = React.lazy(() => import('./pages/LoginPage'))
 const SignupPage = React.lazy(() => import('./pages/SignupPage'))
 const BlogPage = React.lazy(() => import('./pages/BlogPage'))
 const BlogPostPage = React.lazy(() => import('./pages/BlogPostPage'))
+const RelocationPlanPage = React.lazy(() => import('./pages/RelocationPlanPage'))
+const ChecklistPage = React.lazy(() => import('./pages/ChecklistPage'))
 
 function PageSpinner() {
   return (
@@ -40,6 +42,8 @@ export default function App() {
                 <Route path="signup" element={<SignupPage />} />
                 <Route path="blog" element={<BlogPage />} />
                 <Route path="blog/:slug" element={<BlogPostPage />} />
+                <Route path="tools/relocation-plan" element={<RelocationPlanPage />} />
+                <Route path="tools/checklist" element={<ChecklistPage />} />
               </Route>
             </Routes>
           </Suspense>

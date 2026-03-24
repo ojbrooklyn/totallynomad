@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import {
   ChevronRight,
   ChevronLeft,
@@ -12,6 +13,10 @@ import {
   ExternalLink,
   Plane,
   Wifi,
+  MapPin,
+  FileCheck,
+  Star,
+  ArrowRight,
 } from 'lucide-react'
 import PlusGate from '../components/PlusGate'
 import { countries } from '../lib/data/countries'
@@ -1263,8 +1268,57 @@ export default function ToolsPage() {
             Free tools to help plan your move abroad
           </p>
 
+          {/* Premium Tools */}
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
+            <Link
+              to="/tools/relocation-plan"
+              className="group relative rounded-xl border-2 border-teal-500/30 dark:border-teal-500/20 bg-white dark:bg-slate-800/50 p-5 shadow-sm hover:shadow-md hover:border-teal-500 transition-all duration-200"
+            >
+              <span className="absolute -top-2.5 right-4 inline-flex items-center gap-1 rounded-full bg-[#0F766E] px-2.5 py-0.5 text-[10px] font-bold text-white uppercase tracking-wide">
+                <Star className="w-3 h-3" /> Plus
+              </span>
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-sm">Personalized Relocation Plan</h3>
+                  <p className="text-xs text-slate-500 dark:text-stone-400 mt-1">10-step wizard with top 3 country matches, cost estimates, and week-by-week timeline.</p>
+                  <span className="inline-flex items-center gap-1 text-xs text-teal-600 dark:text-teal-400 font-semibold mt-2 group-hover:gap-2 transition-all">
+                    Get Started <ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/tools/checklist"
+              className="group relative rounded-xl border-2 border-teal-500/30 dark:border-teal-500/20 bg-white dark:bg-slate-800/50 p-5 shadow-sm hover:shadow-md hover:border-teal-500 transition-all duration-200"
+            >
+              <span className="absolute -top-2.5 right-4 inline-flex items-center gap-1 rounded-full bg-[#0F766E] px-2.5 py-0.5 text-[10px] font-bold text-white uppercase tracking-wide">
+                <Star className="w-3 h-3" /> Plus
+              </span>
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center shrink-0">
+                  <FileCheck className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-sm">Document Checklist</h3>
+                  <p className="text-xs text-slate-500 dark:text-stone-400 mt-1">Interactive visa document checklist with costs, timelines, dependencies, and progress tracking.</p>
+                  <span className="inline-flex items-center gap-1 text-xs text-teal-600 dark:text-teal-400 font-semibold mt-2 group-hover:gap-2 transition-all">
+                    Get Started <ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-xs text-slate-400 dark:text-slate-500 mb-4 uppercase tracking-wider font-medium">Free Tools</p>
+          </div>
+
           {/* Tab Switcher */}
-          <div className="mt-8 inline-flex bg-stone-100 dark:bg-slate-800 rounded-xl p-1 gap-1">
+          <div className="inline-flex bg-stone-100 dark:bg-slate-800 rounded-xl p-1 gap-1">
             <button
               onClick={() => setActiveTab('quiz')}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${

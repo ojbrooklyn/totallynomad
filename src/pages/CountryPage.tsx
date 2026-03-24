@@ -684,18 +684,18 @@ export default function CountryPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              to="/tools"
+              to="/tools/relocation-plan"
               className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-white text-gray-900 font-bold text-sm hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              <MapPin className="w-4 h-4" />
+              Get your personalized plan for {country.name}
+            </Link>
+            <Link
+              to="/tools"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-white/15 border border-white/30 text-white font-bold text-sm hover:bg-white/25 transition-colors"
             >
               <Zap className="w-4 h-4" />
               Take the Visa Quiz
-            </Link>
-            <Link
-              to="/pricing"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-white/15 border border-white/30 text-white font-bold text-sm hover:bg-white/25 transition-colors"
-            >
-              <DollarSign className="w-4 h-4" />
-              View Pricing
             </Link>
           </div>
         </div>
