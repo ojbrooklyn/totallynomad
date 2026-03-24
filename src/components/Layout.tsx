@@ -71,22 +71,22 @@ export default function Layout() {
       {/* ── Navigation ── */}
       <header className="sticky top-0 z-50 w-full border-b border-stone-200 dark:border-[#2A3444] bg-white/80 dark:bg-[#0C1222]/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-[#0C1222]/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-20 items-end justify-between pb-3">
 
             {/* Left – Logo */}
             <Link
               to="/"
-              className="flex items-center shrink-0"
+              className="flex items-end shrink-0"
             >
               <img
                 src={isDark ? logoLight : logoDark}
                 alt="TotallyNomad"
-                className="h-8 w-auto"
+                className="h-12 md:h-14 w-auto"
               />
             </Link>
 
             {/* Center – Desktop links */}
-            <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+            <nav className="hidden md:flex items-end gap-1" aria-label="Main navigation">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}

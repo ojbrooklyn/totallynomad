@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Globe,
@@ -23,6 +24,15 @@ import { newsItems } from '../lib/data/news';
 import { testimonials } from '../lib/data/testimonials';
 import { countries } from '../lib/data/countries';
 import { partners } from '../lib/data/partners';
+
+// ─── Hero background images ─────────────────────────────────────────────────
+const heroImages = [
+  'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=1920&q=80',
+  'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=1920&q=80',
+  'https://images.unsplash.com/photo-1528181304800-259b08848526?w=1920&q=80',
+  'https://images.unsplash.com/photo-1518638150340-f706e86654de?w=1920&q=80',
+  'https://images.unsplash.com/photo-1519999482648-25049ddd37b1?w=1920&q=80',
+];
 
 // ─── Category badge colours ───────────────────────────────────────────────────
 const categoryColours: Record<string, string> = {
@@ -103,6 +113,24 @@ function formatDate(iso: string): string {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function HomePage() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Preload hero images
+  useEffect(() => {
+    heroImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  // Rotate hero background every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const featuredCountries = countries.filter(c =>
     ['portugal', 'mexico', 'spain', 'thailand', 'costa-rica'].includes(c.slug)
   );
@@ -122,22 +150,27 @@ export default function HomePage() {
       {/* ─────────────────────────────────────────────────────────────────── */}
       {/* 1. HERO                                                             */}
       {/* ─────────────────────────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-[#0F766E] to-emerald-800 overflow-hidden">
-        {/* Background decoration */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
-          <div className="absolute bottom-0 -left-24 w-80 h-80 rounded-full bg-emerald-900/30 blur-2xl" />
-          <div className="absolute inset-0 opacity-5"
+      <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center">
+        {/* Rotating background images */}
+        {heroImages.map((src, i) => (
+          <div
+            key={src}
+            className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
             style={{
-              backgroundImage:
-                'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-              backgroundSize: '40px 40px',
+              backgroundImage: `url(${src})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: i === currentImage ? 1 : 0,
             }}
+            aria-hidden="true"
           />
-        </div>
+        ))}
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-44">
-          <div className="max-w-4xl">
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-44 flex items-center justify-center">
+          <div className="max-w-4xl text-center">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-white/90 text-sm font-medium mb-10">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -151,13 +184,13 @@ export default function HomePage() {
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl md:text-2xl text-teal-100 font-medium max-w-2xl mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 font-medium max-w-2xl mx-auto mb-12 leading-relaxed">
               The Complete Platform for Americans Moving Abroad — country guides,
               visa tools, budget calculators, and a community of 8,500+ expats.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/signup"
                 className="inline-flex items-center justify-center gap-2 bg-white text-teal-700 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:bg-teal-50 transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
@@ -175,7 +208,7 @@ export default function HomePage() {
             </div>
 
             {/* Social proof */}
-            <div className="mt-14 flex items-center gap-3">
+            <div className="mt-14 flex items-center justify-center gap-3">
               <div className="flex -space-x-2">
                 {['MT', 'JW', 'RP', 'CM'].map((initials) => (
                   <div
@@ -186,7 +219,7 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <p className="text-teal-100 text-sm">
+              <p className="text-white/80 text-sm">
                 <span className="font-bold text-white">15,000+</span> Americans moved abroad with our help
               </p>
             </div>
