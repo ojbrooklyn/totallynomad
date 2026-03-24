@@ -46,7 +46,7 @@ const footerColumns = [
       { label: 'Budget Calculator', to: '/tools' },
       { label: 'Country Comparison', to: '/tools/compare' },
       { label: 'Blog', to: '/blog' },
-      { label: 'Community', to: 'https://discord.gg/totallynomad' },
+      { label: 'Community', to: 'https://discord.gg/t2Y3Qw2C' },
     ],
   },
   {
@@ -408,7 +408,7 @@ export default function Layout() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="https://discord.gg/totallynomad" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-teal-200 hover:text-white transition-colors">
+                  <a href="https://discord.gg/t2Y3Qw2C" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-teal-200 hover:text-white transition-colors">
                     <MessageCircle className="w-4 h-4" /> Discord
                   </a>
                 </li>
@@ -444,7 +444,7 @@ export default function Layout() {
               <a href="#" aria-label="Instagram" className="text-teal-300 hover:text-white transition-colors duration-150">
                 <Camera className="w-4 h-4" />
               </a>
-              <a href="https://discord.gg/totallynomad" target="_blank" rel="noopener noreferrer" aria-label="Discord" className="text-teal-300 hover:text-white transition-colors duration-150">
+              <a href="https://discord.gg/t2Y3Qw2C" target="_blank" rel="noopener noreferrer" aria-label="Discord" className="text-teal-300 hover:text-white transition-colors duration-150">
                 <MessageCircle className="w-4 h-4" />
               </a>
             </div>

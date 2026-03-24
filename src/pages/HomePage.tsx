@@ -696,7 +696,7 @@ export default function HomePage() {
               Ask questions, share tips, and connect with Americans who've already made the move.
             </p>
             <a
-              href="https://discord.gg/totallynomad"
+              href="https://discord.gg/t2Y3Qw2C"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-gray-100 transition-colors shadow-lg"

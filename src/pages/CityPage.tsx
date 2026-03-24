@@ -407,7 +407,7 @@ export default function CityPage() {
             Have questions about living in {city.name}? Connect with expats who are already there.
           </p>
           <a
-            href="https://discord.gg/totallynomad"
+            href="https://discord.gg/t2Y3Qw2C"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-gray-100 transition-colors shadow-lg"
