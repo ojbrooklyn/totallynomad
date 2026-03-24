@@ -84,7 +84,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex items-center justify-center px-4 py-12 transition-colors duration-200">
+    <div className="min-h-screen bg-[#FFFBEB] dark:bg-[#0C1222] flex items-center justify-center px-4 py-12 transition-colors duration-200">
       {/* Google toast */}
       {googleToast && (
         <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-lg bg-slate-800 dark:bg-slate-700 text-white text-sm px-4 py-2.5 shadow-lg transition-all duration-300">
@@ -95,7 +95,7 @@ export default function SignupPage() {
       <div className="w-full max-w-md">
         {/* Logo / Brand */}
         <div className="text-center mb-8">
-          <span className="inline-block text-2xl font-extrabold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+          <span className="inline-block text-2xl font-extrabold bg-gradient-to-r from-[#0F766E] to-[#14B8A6] bg-clip-text text-transparent">
             TotallyNomad
           </span>
           <h1 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">
@@ -132,7 +132,7 @@ export default function SignupPage() {
                   value={fullName}
                   onChange={e => setFullName(e.target.value)}
                   placeholder="Jane Smith"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-150"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors duration-150"
                 />
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function SignupPage() {
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-150"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors duration-150"
                 />
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function SignupPage() {
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-9 pr-10 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-150"
+                  className="w-full pl-9 pr-10 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors duration-150"
                 />
                 <button
                   type="button"
@@ -238,7 +238,7 @@ export default function SignupPage() {
                       ? 'border-red-400 dark:border-red-600 focus:ring-red-500'
                       : confirmPassword.length > 0 && confirmPassword === password
                       ? 'border-green-400 dark:border-green-600 focus:ring-green-500'
-                      : 'border-slate-300 dark:border-slate-600 focus:ring-blue-500'
+                      : 'border-slate-300 dark:border-slate-600 focus:ring-teal-500'
                   }`}
                 />
                 <button
@@ -267,7 +267,7 @@ export default function SignupPage() {
                 <div
                   className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-colors duration-150 ${
                     agreed
-                      ? 'bg-blue-600 border-blue-600'
+                      ? 'bg-[#0F766E] border-[#0F766E]'
                       : 'bg-white dark:bg-slate-700 border-slate-300 dark:border-slate-600'
                   }`}
                 >
@@ -286,11 +286,11 @@ export default function SignupPage() {
               </div>
               <span className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                 I agree to the{' '}
-                <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline" onClick={e => e.preventDefault()}>
+                <a href="#" className="text-teal-600 dark:text-teal-400 hover:underline" onClick={e => e.preventDefault()}>
                   Terms of Service
                 </a>{' '}
                 and{' '}
-                <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline" onClick={e => e.preventDefault()}>
+                <a href="#" className="text-teal-600 dark:text-teal-400 hover:underline" onClick={e => e.preventDefault()}>
                   Privacy Policy
                 </a>
               </span>
@@ -300,7 +300,7 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 active:from-blue-800 active:to-blue-900 text-white text-sm font-semibold shadow transition-all duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full py-3 rounded-lg bg-gradient-to-r from-[#0F766E] to-[#134E4A] hover:from-[#0D9488] hover:to-[#0F766E] active:from-[#134E4A] active:to-[#0F766E] text-white text-sm font-semibold shadow transition-all duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? 'Creating account…' : 'Create Account'}
             </button>
@@ -351,7 +351,7 @@ export default function SignupPage() {
           Already have an account?{' '}
           <Link
             to="/login"
-            className="font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+            className="font-semibold text-teal-600 dark:text-teal-400 hover:underline"
           >
             Sign in
           </Link>

@@ -46,7 +46,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex items-center justify-center px-4 py-12 transition-colors duration-200">
+    <div className="min-h-screen bg-[#FFFBEB] dark:bg-[#0C1222] flex items-center justify-center px-4 py-12 transition-colors duration-200">
       {/* Google toast */}
       {googleToast && (
         <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-lg bg-slate-800 dark:bg-slate-700 text-white text-sm px-4 py-2.5 shadow-lg transition-all duration-300">
@@ -57,7 +57,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Logo / Brand */}
         <div className="text-center mb-8">
-          <span className="inline-block text-2xl font-extrabold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+          <span className="inline-block text-2xl font-extrabold bg-gradient-to-r from-[#0F766E] to-[#14B8A6] bg-clip-text text-transparent">
             TotallyNomad
           </span>
           <h1 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">
@@ -94,7 +94,7 @@ export default function LoginPage() {
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-150"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors duration-150"
                 />
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function LoginPage() {
                 </label>
                 <a
                   href="#"
-                  className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+                  className="text-xs text-teal-600 dark:text-teal-400 hover:underline"
                   onClick={e => e.preventDefault()}
                 >
                   Forgot password?
@@ -125,7 +125,7 @@ export default function LoginPage() {
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-9 pr-10 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-150"
+                  className="w-full pl-9 pr-10 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors duration-150"
                 />
                 <button
                   type="button"
@@ -142,7 +142,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 active:from-blue-800 active:to-blue-900 text-white text-sm font-semibold shadow transition-all duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full py-3 rounded-lg bg-gradient-to-r from-[#0F766E] to-[#134E4A] hover:from-[#0D9488] hover:to-[#0F766E] active:from-[#134E4A] active:to-[#0F766E] text-white text-sm font-semibold shadow transition-all duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? 'Signing in…' : 'Sign In'}
             </button>
@@ -193,7 +193,7 @@ export default function LoginPage() {
           Don't have an account?{' '}
           <Link
             to="/signup"
-            className="font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+            className="font-semibold text-teal-600 dark:text-teal-400 hover:underline"
           >
             Sign up
           </Link>

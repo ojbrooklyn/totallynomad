@@ -725,7 +725,7 @@ function VisaQuiz() {
               onClick={() => handleOptionSelect(option)}
               className={`text-left px-4 py-3 rounded-xl border-2 text-sm font-medium transition-all duration-150 ${
                 isSelected
-                  ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/30 dark:border-blue-400 text-blue-700 dark:text-blue-300'
+                  ? 'border-teal-500 bg-teal-50 dark:bg-teal-900/30 dark:border-teal-400 text-teal-700 dark:text-teal-300'
                   : 'border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-700 dark:text-stone-300 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-stone-50 dark:hover:bg-gray-750'
               }`}
             >
@@ -775,7 +775,7 @@ function CountryResultCard({ country }: { country: CountryResult }) {
             <ScoreBar score={visa.score} />
             <p className="text-xs text-gray-600 dark:text-stone-400">{visa.matchReason}</p>
             <div className="flex items-start gap-1.5">
-              <CheckCircle className="w-3.5 h-3.5 text-blue-500 shrink-0 mt-0.5" />
+              <CheckCircle className="w-3.5 h-3.5 text-teal-500 shrink-0 mt-0.5" />
               <p className="text-xs text-gray-500 dark:text-stone-400">{visa.keyRequirement}</p>
             </div>
           </div>
@@ -1105,9 +1105,9 @@ function BudgetCalculator() {
           <AffordabilityIndicator ratio={result.affordabilityRatio} />
 
           {result.usSavings > 0 && (
-            <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
-              <TrendingDown className="w-5 h-5 text-blue-500 shrink-0" />
-              <p className="text-sm text-blue-800 dark:text-blue-300">
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800">
+              <TrendingDown className="w-5 h-5 text-teal-500 shrink-0" />
+              <p className="text-sm text-teal-800 dark:text-teal-300">
                 Estimated <strong>{fmt(result.usSavings)}/month</strong> savings compared to a similar US lifestyle.
               </p>
             </div>
@@ -1231,7 +1231,7 @@ function BudgetCalculator() {
               </div>
 
               {/* 6-Month Summary */}
-              <div className="rounded-xl bg-blue-600 p-5 text-white space-y-3 shadow-md">
+              <div className="rounded-xl bg-[#0F766E] p-5 text-white space-y-3 shadow-md">
                 <h4 className="font-bold text-sm opacity-90">Total 6-Month Budget</h4>
                 <p className="text-4xl font-extrabold">{fmt(result.sixMonthTotal)}</p>
                 <p className="text-sm opacity-80">
@@ -1252,9 +1252,9 @@ export default function ToolsPage() {
   const [activeTab, setActiveTab] = useState<Tab>('quiz')
 
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-[#FFFBEB] dark:bg-[#0C1222]">
       {/* Header Banner */}
-      <div className="bg-white dark:bg-slate-950 py-20 md:py-24 px-4">
+      <div className="bg-white dark:bg-[#0C1222] py-20 md:py-24 px-4">
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-extrabold font-serif text-slate-900 dark:text-white tracking-tight">
             Relocation Tools
@@ -1269,7 +1269,7 @@ export default function ToolsPage() {
               onClick={() => setActiveTab('quiz')}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
                 activeTab === 'quiz'
-                  ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-white shadow-sm'
+                  ? 'bg-white dark:bg-slate-700 text-teal-700 dark:text-white shadow-sm'
                   : 'text-slate-600 dark:text-stone-400 hover:text-slate-900 dark:hover:text-white hover:bg-stone-50 dark:hover:bg-slate-700/50'
               }`}
             >
@@ -1280,7 +1280,7 @@ export default function ToolsPage() {
               onClick={() => setActiveTab('calculator')}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
                 activeTab === 'calculator'
-                  ? 'bg-white dark:bg-slate-700 text-blue-700 dark:text-white shadow-sm'
+                  ? 'bg-white dark:bg-slate-700 text-teal-700 dark:text-white shadow-sm'
                   : 'text-slate-600 dark:text-stone-400 hover:text-slate-900 dark:hover:text-white hover:bg-stone-50 dark:hover:bg-slate-700/50'
               }`}
             >

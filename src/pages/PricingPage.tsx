@@ -106,9 +106,9 @@ export default function PricingPage() {
   const annualPrice = 89;
 
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-slate-950 transition-colors duration-200">
+    <div className="min-h-screen bg-[#FFFBEB] dark:bg-[#0C1222] transition-colors duration-200">
       {/* Header Banner */}
-      <div className="bg-white dark:bg-slate-950 py-20 md:py-24 px-4 text-center">
+      <div className="bg-white dark:bg-[#0C1222] py-20 md:py-24 px-4 text-center">
         <h1 className="text-4xl font-bold font-serif text-slate-900 dark:text-white mb-3">Simple, Honest Pricing</h1>
         <p className="text-slate-500 dark:text-stone-400 text-lg max-w-xl mx-auto">
           No fake urgency. No hidden fees. Just tools that work.
@@ -123,8 +123,8 @@ export default function PricingPage() {
           </span>
           <button
             onClick={() => setAnnual(v => !v)}
-            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-              annual ? 'bg-blue-600' : 'bg-slate-300 dark:bg-slate-600'
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 ${
+              annual ? 'bg-[#0F766E]' : 'bg-slate-300 dark:bg-slate-600'
             }`}
             aria-pressed={annual}
           >
@@ -167,8 +167,8 @@ export default function PricingPage() {
           </div>
 
           {/* Plus Card */}
-          <div className="rounded-2xl border-2 border-blue-500 bg-white dark:bg-slate-800/50 p-8 shadow-lg relative transition-colors duration-200">
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-bold text-white shadow">
+          <div className="rounded-2xl border-2 border-teal-500 bg-white dark:bg-slate-800/50 p-8 shadow-lg relative transition-colors duration-200">
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-[#0F766E] px-4 py-1 text-xs font-bold text-white shadow">
               Most Popular
             </span>
 
@@ -192,7 +192,7 @@ export default function PricingPage() {
               ))}
             </ul>
 
-            <button className="w-full rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 py-3 text-sm font-semibold text-white shadow transition-colors duration-150">
+            <button className="w-full rounded-lg bg-[#0F766E] hover:bg-[#0D9488] active:bg-[#134E4A] py-3 text-sm font-semibold text-white shadow transition-colors duration-150">
               Start Plus Plan
             </button>
           </div>
@@ -213,7 +213,7 @@ export default function PricingPage() {
                   <th className="text-center py-4 px-6 font-semibold text-slate-600 dark:text-stone-300">
                     Free
                   </th>
-                  <th className="text-center py-4 px-6 font-semibold text-blue-600 dark:text-blue-400">
+                  <th className="text-center py-4 px-6 font-semibold text-teal-600 dark:text-teal-400">
                     Plus
                   </th>
                 </tr>

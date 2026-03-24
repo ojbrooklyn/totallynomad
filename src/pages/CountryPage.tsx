@@ -28,10 +28,10 @@ import { partners } from '../lib/data/partners'
 import PlusGate from '../components/PlusGate'
 
 const COUNTRY_GRADIENTS: Record<string, string> = {
-  portugal: 'from-blue-600 to-indigo-700',
+  portugal: 'from-[#0F766E] to-emerald-800',
   mexico: 'from-green-600 to-emerald-700',
   spain: 'from-orange-500 to-red-600',
-  thailand: 'from-purple-600 to-pink-600',
+  thailand: 'from-amber-600 to-orange-600',
   'costa-rica': 'from-emerald-500 to-teal-600',
 }
 
@@ -87,7 +87,7 @@ export default function CountryPage() {
 
   if (!country) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-6 px-4 bg-stone-50 dark:bg-slate-950 text-center">
+      <div className="min-h-screen flex flex-col items-center justify-center gap-6 px-4 bg-[#FFFBEB] dark:bg-[#0C1222] text-center">
         <p className="text-7xl">🌍</p>
         <h1 className="text-4xl font-bold font-serif text-gray-900 dark:text-stone-100">Country not found</h1>
         <p className="text-gray-500 dark:text-stone-400 max-w-md">
@@ -109,7 +109,7 @@ export default function CountryPage() {
   const [firstVisa, ...remainingVisas] = country.visaTypes
 
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-slate-950 text-gray-900 dark:text-stone-100">
+    <div className="min-h-screen bg-[#FFFBEB] dark:bg-[#0C1222] text-gray-900 dark:text-stone-100">
       {/* ── Breadcrumb ───────────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-4 pt-5 pb-1">
         <nav className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-stone-400">
@@ -220,7 +220,7 @@ export default function CountryPage() {
                   {firstVisa.name}
                 </h3>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  <span className="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-medium">
+                  <span className="px-2.5 py-0.5 rounded-full bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300 text-xs font-medium">
                     {firstVisa.type}
                   </span>
                   <span
@@ -295,7 +295,7 @@ export default function CountryPage() {
                           {visa.name}
                         </h3>
                         <div className="flex flex-wrap gap-2 mt-2">
-                          <span className="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-medium">
+                          <span className="px-2.5 py-0.5 rounded-full bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300 text-xs font-medium">
                             {visa.type}
                           </span>
                           <span
@@ -497,7 +497,7 @@ export default function CountryPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex items-start gap-3 bg-stone-50 dark:bg-slate-800 rounded-xl p-4">
-                  <Shield className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                  <Shield className="w-5 h-5 text-teal-500 mt-0.5 shrink-0" />
                   <div>
                     <p className="text-xs font-medium text-gray-500 dark:text-stone-400 uppercase tracking-wide mb-1">
                       Quality Rating

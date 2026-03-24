@@ -31,7 +31,7 @@ export default function PlusGate({
       </div>
 
       {/* Gradient + lock overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-white/60 via-white/80 to-white/95 dark:from-slate-900/60 dark:via-slate-900/80 dark:to-slate-900/95 backdrop-blur-[2px]">
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-white/60 via-white/80 to-white/95 dark:from-[#0C1222]/60 dark:via-[#0C1222]/80 dark:to-[#0C1222]/95 backdrop-blur-[2px]">
         <div className="flex flex-col items-center gap-4 px-6 py-8 text-center max-w-sm">
           {/* Lock icon */}
           <div className="w-14 h-14 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center">
