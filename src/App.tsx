@@ -7,6 +7,7 @@ import Layout from './components/Layout'
 // Lazy-loaded page components
 const HomePage = React.lazy(() => import('./pages/HomePage'))
 const ToolsPage = React.lazy(() => import('./pages/ToolsPage'))
+const CountriesPage = React.lazy(() => import('./pages/CountriesPage'))
 const CountryPage = React.lazy(() => import('./pages/CountryPage'))
 const PricingPage = React.lazy(() => import('./pages/PricingPage'))
 const LoginPage = React.lazy(() => import('./pages/LoginPage'))
@@ -30,6 +31,7 @@ export default function App() {
               <Route element={<Layout />}>
                 <Route index element={<HomePage />} />
                 <Route path="tools" element={<ToolsPage />} />
+                <Route path="countries" element={<CountriesPage />} />
                 <Route path="countries/:slug" element={<CountryPage />} />
                 <Route path="pricing" element={<PricingPage />} />
                 <Route path="login" element={<LoginPage />} />
