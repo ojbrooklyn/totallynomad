@@ -17,13 +17,18 @@ import {
   DollarSign,
   ExternalLink,
   Plane,
+  Radio,
 } from 'lucide-react';
 import { platformStats } from '../lib/data/stats';
-import { exchangeRates } from '../lib/data/exchangeRates';
-import { newsItems } from '../lib/data/news';
+import { exchangeRates as staticExchangeRates } from '../lib/data/exchangeRates';
+import type { ExchangeRate } from '../lib/data/exchangeRates';
+import { newsItems as staticNewsItems } from '../lib/data/news';
+import type { NewsItem } from '../lib/data/news';
 import { testimonials } from '../lib/data/testimonials';
 import { countries } from '../lib/data/countries';
 import { partners } from '../lib/data/partners';
+import { fetchExchangeRates } from '../lib/api/exchangeRates';
+import { fetchNews } from '../lib/api/news';
 
 // ─── Hero background images ─────────────────────────────────────────────────
 const heroImages = [
@@ -114,6 +119,30 @@ function formatDate(iso: string): string {
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function HomePage() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [liveRates, setLiveRates] = useState<ExchangeRate[]>(staticExchangeRates);
+  const [rateSource, setRateSource] = useState<'live' | 'cached' | 'static'>('static');
+  const [rateUpdatedAt, setRateUpdatedAt] = useState(0);
+  const [liveNews, setLiveNews] = useState<NewsItem[]>(staticNewsItems);
+  const [newsSource, setNewsSource] = useState<'live' | 'cached' | 'static'>('static');
+  const [newsUpdatedAt, setNewsUpdatedAt] = useState(0);
+
+  // Fetch live exchange rates
+  useEffect(() => {
+    fetchExchangeRates().then((result) => {
+      setLiveRates(result.rates);
+      setRateSource(result.source);
+      setRateUpdatedAt(result.updatedAt);
+    });
+  }, []);
+
+  // Fetch live news
+  useEffect(() => {
+    fetchNews().then((result) => {
+      setLiveNews(result.items);
+      setNewsSource(result.source);
+      setNewsUpdatedAt(result.updatedAt);
+    });
+  }, []);
 
   // Preload hero images
   useEffect(() => {
@@ -419,9 +448,19 @@ export default function HomePage() {
                     Indicative mid-market rates · Updated daily
                   </p>
                 </div>
-                <span className="text-xs font-medium bg-stone-100 dark:bg-slate-700 text-slate-600 dark:text-stone-300 px-2.5 py-1 rounded-full">
-                  Example data
-                </span>
+                {rateSource === 'live' ? (
+                  <span className="inline-flex items-center gap-1 text-xs font-medium bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 px-2.5 py-1 rounded-full">
+                    <Radio className="w-3 h-3" /> Live
+                  </span>
+                ) : rateSource === 'cached' ? (
+                  <span className="text-xs font-medium bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2.5 py-1 rounded-full">
+                    Updated {new Date(rateUpdatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  </span>
+                ) : (
+                  <span className="text-xs font-medium bg-stone-100 dark:bg-slate-700 text-slate-600 dark:text-stone-300 px-2.5 py-1 rounded-full">
+                    Example data
+                  </span>
+                )}
               </div>
 
               <div className="overflow-x-auto">
@@ -440,7 +479,7 @@ export default function HomePage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-stone-100 dark:divide-slate-700">
-                    {exchangeRates.map((rate) => {
+                    {liveRates.map((rate) => {
                       const isPositive = rate.change24h > 0;
                       const isNeutral  = rate.change24h === 0;
                       return (
@@ -508,16 +547,23 @@ export default function HomePage() {
                     Visa changes, tax updates & destination news
                   </p>
                 </div>
-                <Link
-                  to="/news"
-                  className="text-xs font-semibold text-teal-600 dark:text-teal-400 hover:underline"
-                >
-                  View all →
-                </Link>
+                <div className="flex items-center gap-3">
+                  {newsSource !== 'static' && (
+                    <span className="text-xs text-slate-400 dark:text-slate-500">
+                      Updated {newsUpdatedAt ? new Date(newsUpdatedAt).toLocaleDateString([], { month: 'short', day: 'numeric' }) : ''}
+                    </span>
+                  )}
+                  <Link
+                    to="/blog"
+                    className="text-xs font-semibold text-teal-600 dark:text-teal-400 hover:underline"
+                  >
+                    View all →
+                  </Link>
+                </div>
               </div>
 
               <ul className="divide-y divide-stone-100 dark:divide-slate-700">
-                {newsItems.slice(0, 5).map((item) => {
+                {liveNews.slice(0, 5).map((item) => {
                   const badgeClass =
                     categoryColours[item.category] ??
                     'bg-stone-100 text-slate-700 dark:bg-slate-700 dark:text-stone-300';
@@ -549,7 +595,7 @@ export default function HomePage() {
 
               <div className="px-6 py-4 border-t border-stone-100 dark:border-slate-700">
                 <Link
-                  to="/news"
+                  to="/blog"
                   className="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-semibold text-teal-600 dark:text-teal-400 border border-teal-200 dark:border-teal-800 rounded-lg hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-colors"
                 >
                   Read All News

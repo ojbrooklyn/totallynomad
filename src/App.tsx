@@ -12,6 +12,8 @@ const CountryPage = React.lazy(() => import('./pages/CountryPage'))
 const PricingPage = React.lazy(() => import('./pages/PricingPage'))
 const LoginPage = React.lazy(() => import('./pages/LoginPage'))
 const SignupPage = React.lazy(() => import('./pages/SignupPage'))
+const BlogPage = React.lazy(() => import('./pages/BlogPage'))
+const BlogPostPage = React.lazy(() => import('./pages/BlogPostPage'))
 
 function PageSpinner() {
   return (
@@ -36,6 +38,8 @@ export default function App() {
                 <Route path="pricing" element={<PricingPage />} />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="signup" element={<SignupPage />} />
+                <Route path="blog" element={<BlogPage />} />
+                <Route path="blog/:slug" element={<BlogPostPage />} />
               </Route>
             </Routes>
           </Suspense>
